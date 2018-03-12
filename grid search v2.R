@@ -41,22 +41,16 @@ for(i in varnames){
   adGRP_adstocked[, i] <- output_list[[i]]$adstocked_vector_max
 }
   
-i <- "UM_AllChan_Mob_Radio_GRP"  
-
-debug(best_adstock)
-
-# Testing
-#------------------------------------------------------------------
-
-a <- best_adstock(var, dep_var)
-a$adstocked_vector_max # the transformed vector with the best adstock parameters
-# View(a$results)
-a$adstock_params # the best adstock parameters
+#----------------------------------------------------------------------------
 
 # check
-a$adstocked_vector_max - adstock_it(var, 0.2, 0, 100)
+test_var <- "UM_AllChan_HSIn_Radio_GRP"
+output_list[[test_var]]$adstock_params
+adGRP_adstocked[,test_var] - adstock_it(ds.prep[,test_var], 0.4, 0, 100)
+cor(adGRP_adstocked[,test_var], dep_var)
+output_list[[test_var]]$results
 
-plot(1:length(var), scale(var), type = "o", xlab = "time", ylab = "scaled Value")
-lines(1:length(var), a$adstocked_vector_max, col = "blue")
+plot(1:length(var), scale(ds.prep[,test_var]), type = "o", xlab = "time", ylab = "scaled Value")
+lines(1:length(var), adGRP_adstocked[,test_var], col = "blue")
 
-cor(dep_var, a$adstocked_vector_max)
+
