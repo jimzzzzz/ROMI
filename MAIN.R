@@ -1,11 +1,7 @@
 
-# Before starting to run the code a project from R studio should be created
-# in the folder where the R files are. When the project is opened the working
-# directory should be the location of the files and there should not be any 
-# issues with the file paths
-#
-# This file should be run first. It is loading the required libraries and helper functions
-# After runing it the programer should proceed with the files that he would work on
+#--------------------------
+
+#--------------------------
 
 options(scipen= 999, digits=8)
 
@@ -20,6 +16,7 @@ library(reshape2)
 library(tidyr)
 library(dplyr)
 # library(gdata)
+library(openxlsx)
 
 #-----------------------------------------------------------------------------------------------
 
@@ -31,5 +28,7 @@ source("helper_functions.R")
 # Data import
 ds.prep <- read.csv("./Data/Model_Database_2018-01-22_v1.csv")
 
+init_data <- read.xlsx("./Data/Model_Database_20180316_Until KW201743.xlsx",
+                       sheet = "DataImport")
 
 
