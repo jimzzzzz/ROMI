@@ -1,5 +1,5 @@
-# model 10 - Inbound telesales and service 3P
-# First Regression - Use the variables & parameters from worksheet "Model 10" Step 1a & Run kalman filter. 
+# model 12 - Indirect retail 3P
+# First Regression - Use the variables & parameters from worksheet "Model 12" Step 1a & Run kalman filter. 
 # Second Regression - Next, run the regression again - With variables in step 1b.
 
 options(scipen= 999, digits=8)
@@ -10,10 +10,10 @@ library(ggplot2)
 library(lattice)
 library(knitr)
 
-# ds.prep <- read.csv("Model_Database_2018-01-22_v1.csv")
-ds.prep <- read.csv("Model_Database_20180327_Until KW201743_1.csv") # validated
+ds.prep <- read.csv("Model_Database_2018-01-22_v1.csv")
+ds.prep <- read.csv("Model_Database_20180403_Until KW201743_2.csv") #missing CPO1b
 
-target <- ds.prep$UM_TeleinSiS_3P_Sales_Units_OE
+target <- ds.prep$UM_Retailind_3P_Sales_Units_OE
 
 # First regression --------------------------------------------------------
 
@@ -24,56 +24,59 @@ n<-c(
   # Price & Discount
   
   "UM_AllChan_3P_ListPrice_Dummy"
-
+  ,"UM_AllChan_3P_LosWochos_PriceReduction"
+  
   # Media Spends
   
-  , "UM_AllChan_HSIn_Magazines_SpendGross"
   , "UM_AllChan_HSIn_OOH_SpendGross"
+  , "UM_AllChan_HSIn_Newspapers_SpendGross"
   
   # Digital
-  , "UM_AllChan_AllProd_PaidSearch_sum_Impressions_ProductTotal"
-  , "UM_AllChan_AllProd_SocialFBInsta_Impressions"
+  , "UM_AllChan_3P_PaidSearch_Impressions_Nonbrand_Product"
   , "UM_AllChan_AllProd_NonProgTotal_Impressions"
+  , "UM_AllChan_AllProd_SocialFBInsta_Impressions"
   
   # Commissions
+  , "UM_Retailind_3P_HSIn_CPO1b_SpendPerOE"
   
   # Sales channel support
-  , "UM_AllChan_3p_Whitemail_Number"
-  , "UM_AllChan_3p_Outbound_ReachedContacts"
+  , "UM_DigitalIndir_AllProd_SalesSupport_Spend_Total"
   
   # Value proposition change
-  , "UM_AllChan_3P_LosWochos_PriceReduction"
-#  , "UM_AllChan_3P_VP2_Stepchange"
+  , "UM_AllChan_3P_ScarcityIndicator_StepChange"
   , "UM_AllChan_3P_VP5_Stepchange"
-  
-  # Competition
-  , "Comp_AllChan_3P_Effectively_Mtl_Price_Avg_Ranking_V1"
 
+  # Competition
+  , "Comp_AllChan_3P_Effectively_Mtl_Price_Avg_Ranking_V4"
+  , "Comp_AllChan_HSIn_Spend"
+  
   # GRP
   , "UM_AllChan_HSIn_Radio_GRP"
-  , "UM_AllChan_HSIn_TV_GRP"
-
+  
   # Seasonality
   
   , "UM_AllChan_AllProd_NationalorFederalHolidays_GeoWeightedDays"
+  , "UM_AllChan_AllProd_MarApr_Easter_Holidays_GeoWeightedDays"
+  , "UM_AllChan_AllProd_DecJanHolidaysXmas_NY_GeoWeightedDays"
+  , "UM_AllChan_AllProd_Karnveal_Holidays_GeoWeightedDays"
 )
 
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% n])
 
 # Adstock first regression ------------------------------------------------
 
-ds.prep.model$UM_AllChan_AllProd_PaidSearch_sum_Impressions_ProductTotal <- adstock_it(ds.prep.model$UM_AllChan_AllProd_PaidSearch_sum_Impressions_ProductTotal, 0.1, 0.4, 500)
+ds.prep.model$UM_AllChan_HSIn_Radio_GRP <- adstock_it(ds.prep.model$UM_AllChan_HSIn_Radio_GRP, 0.1, 0.4, max(ds.prep.model$UM_AllChan_HSIn_Radio_GRP))
+ds.prep.model$UM_AllChan_HSIn_OOH_SpendGross <- adstock_it(ds.prep.model$UM_AllChan_HSIn_OOH_SpendGross, 0.1, 0.9, 100)
+ds.prep.model$UM_AllChan_HSIn_Newspapers_SpendGross <- adstock_it(ds.prep.model$UM_AllChan_HSIn_Newspapers_SpendGross, 0.1, 0.9, max(ds.prep.model$UM_AllChan_HSIn_Newspapers_SpendGross))
+ds.prep.model$UM_AllChan_3P_PaidSearch_Impressions_Nonbrand_Product <- adstock_it(ds.prep.model$UM_AllChan_3P_PaidSearch_Impressions_Nonbrand_Product, 0.1, 0.9, 500)
 ds.prep.model$UM_AllChan_AllProd_NonProgTotal_Impressions <- adstock_it(ds.prep.model$UM_AllChan_AllProd_NonProgTotal_Impressions, 0.8, 0.9, 1000)
 ds.prep.model$UM_AllChan_AllProd_SocialFBInsta_Impressions <- adstock_it(ds.prep.model$UM_AllChan_AllProd_SocialFBInsta_Impressions, 0.1, 0.9, 500)
-ds.prep.model$UM_AllChan_HSIn_Radio_GRP <- adstock_it(ds.prep.model$UM_AllChan_HSIn_Radio_GRP, 0.1, 0.4, max(ds.prep.model$UM_AllChan_HSIn_Radio_GRP))
-ds.prep.model$UM_AllChan_HSIn_TV_GRP <- adstock_it(ds.prep.model$UM_AllChan_HSIn_TV_GRP, 0.1, 0.4, max(ds.prep.model$UM_AllChan_HSIn_TV_GRP))
-ds.prep.model$UM_AllChan_HSIn_Magazines_SpendGross <- adstock_it(ds.prep.model$UM_AllChan_HSIn_Magazines_SpendGross, 0.1, 0.9, 100)
-ds.prep.model$UM_AllChan_HSIn_OOH_SpendGross <- adstock_it(ds.prep.model$UM_AllChan_HSIn_OOH_SpendGross, 0.1, 0.9, 100)
-ds.prep.model$UM_AllChan_3p_Whitemail_Number <- adstock_it(ds.prep.model$UM_AllChan_3p_Whitemail_Number, 0.8, 0.9, 500)
-ds.prep.model$UM_AllChan_3p_Outbound_ReachedContacts <- adstock_it(ds.prep.model$UM_AllChan_3p_Outbound_ReachedContacts, 0.1, 0.9, 500)
+ds.prep.model$Comp_AllChan_HSIn_Spend <- adstock_it(ds.prep.model$Comp_AllChan_HSIn_Spend, 0.1, 0.1, 1000)
+# scalar transformations
+ds.prep.model$UM_DigitalIndir_AllProd_SalesSupport_Spend_Total <- ds.prep.model$UM_DigitalIndir_AllProd_SalesSupport_Spend_Total/500
 
 
-# Model code first regression ---------------------------------------------
+#  Model code First regression---------------------------------------------
 
 scaling_factor <- 1000
 complete.db <- ds.prep.model
@@ -120,66 +123,68 @@ pVal <- c(0.0, pVal)
 
 View(pVal)
 
-# out.data <- t(ind.Var)
-# contribution <- model_beta*out.data
 
-# Now run regression again with variables in step 1b
+# Repeat DLM with VP2 in place of List Price ------------------------------
 
 n<-c(  
   
   # Price & Discount
   
-#  , "UM_AllChan_3P_ListPrice_Dummy"
+#  "UM_AllChan_3P_ListPrice_Dummy"
+  "UM_AllChan_3P_LosWochos_PriceReduction"
   
   # Media Spends
   
-  "UM_AllChan_HSIn_Magazines_SpendGross"
   , "UM_AllChan_HSIn_OOH_SpendGross"
+  , "UM_AllChan_HSIn_Newspapers_SpendGross"
   
   # Digital
-  , "UM_AllChan_AllProd_PaidSearch_sum_Impressions_ProductTotal"
-  , "UM_AllChan_AllProd_SocialFBInsta_Impressions"
+  , "UM_AllChan_3P_PaidSearch_Impressions_Nonbrand_Product"
   , "UM_AllChan_AllProd_NonProgTotal_Impressions"
+  , "UM_AllChan_AllProd_SocialFBInsta_Impressions"
   
   # Commissions
+  , "UM_Retailind_3P_HSIn_CPO1b_SpendPerOE"
   
   # Sales channel support
-  , "UM_AllChan_3p_Whitemail_Number"
-  , "UM_AllChan_3p_Outbound_ReachedContacts"
+  , "UM_DigitalIndir_AllProd_SalesSupport_Spend_Total"
   
   # Value proposition change
-  , "UM_AllChan_3P_LosWochos_PriceReduction"
-  , "UM_AllChan_3P_VP2_Stepchange"
+  , "UM_AllChan_3P_ScarcityIndicator_StepChange"
   , "UM_AllChan_3P_VP5_Stepchange"
+  , "UM_AllChan_3P_VP2_Stepchange"
   
   # Competition
-  , "Comp_AllChan_3P_Effectively_Mtl_Price_Avg_Ranking_V1"
+  , "Comp_AllChan_3P_Effectively_Mtl_Price_Avg_Ranking_V4"
+  , "Comp_AllChan_HSIn_Spend"
   
   # GRP
   , "UM_AllChan_HSIn_Radio_GRP"
-  , "UM_AllChan_HSIn_TV_GRP"
   
   # Seasonality
   
   , "UM_AllChan_AllProd_NationalorFederalHolidays_GeoWeightedDays"
+  , "UM_AllChan_AllProd_MarApr_Easter_Holidays_GeoWeightedDays"
+  , "UM_AllChan_AllProd_DecJanHolidaysXmas_NY_GeoWeightedDays"
+  , "UM_AllChan_AllProd_Karnveal_Holidays_GeoWeightedDays"
 )
 
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% n])
 
-#
-# Adstock the data
-#
+# Adstock second regression ------------------------------------------------
 
-ds.prep.model$UM_AllChan_AllProd_PaidSearch_sum_Impressions_ProductTotal <- adstock_it(ds.prep.model$UM_AllChan_AllProd_PaidSearch_sum_Impressions_ProductTotal, 0.1, 0.4, 500)
+ds.prep.model$UM_AllChan_HSIn_Radio_GRP <- adstock_it(ds.prep.model$UM_AllChan_HSIn_Radio_GRP, 0.1, 0.4, max(ds.prep.model$UM_AllChan_HSIn_Radio_GRP))
+ds.prep.model$UM_AllChan_HSIn_OOH_SpendGross <- adstock_it(ds.prep.model$UM_AllChan_HSIn_OOH_SpendGross, 0.1, 0.9, 100)
+ds.prep.model$UM_AllChan_HSIn_Newspapers_SpendGross <- adstock_it(ds.prep.model$UM_AllChan_HSIn_Newspapers_SpendGross, 0.1, 0.9, max(ds.prep.model$UM_AllChan_HSIn_Newspapers_SpendGross))
+ds.prep.model$UM_AllChan_3P_PaidSearch_Impressions_Nonbrand_Product <- adstock_it(ds.prep.model$UM_AllChan_3P_PaidSearch_Impressions_Nonbrand_Product, 0.1, 0.9, 500)
 ds.prep.model$UM_AllChan_AllProd_NonProgTotal_Impressions <- adstock_it(ds.prep.model$UM_AllChan_AllProd_NonProgTotal_Impressions, 0.8, 0.9, 1000)
 ds.prep.model$UM_AllChan_AllProd_SocialFBInsta_Impressions <- adstock_it(ds.prep.model$UM_AllChan_AllProd_SocialFBInsta_Impressions, 0.1, 0.9, 500)
-ds.prep.model$UM_AllChan_HSIn_Radio_GRP <- adstock_it(ds.prep.model$UM_AllChan_HSIn_Radio_GRP, 0.1, 0.4, max(ds.prep.model$UM_AllChan_HSIn_Radio_GRP))
-ds.prep.model$UM_AllChan_HSIn_TV_GRP <- adstock_it(ds.prep.model$UM_AllChan_HSIn_TV_GRP, 0.1, 0.4, max(ds.prep.model$UM_AllChan_HSIn_TV_GRP))
-ds.prep.model$UM_AllChan_HSIn_Magazines_SpendGross <- adstock_it(ds.prep.model$UM_AllChan_HSIn_Magazines_SpendGross, 0.1, 0.9, 100)
-ds.prep.model$UM_AllChan_HSIn_OOH_SpendGross <- adstock_it(ds.prep.model$UM_AllChan_HSIn_OOH_SpendGross, 0.1, 0.9, 100)
-ds.prep.model$UM_AllChan_3p_Whitemail_Number <- adstock_it(ds.prep.model$UM_AllChan_3p_Whitemail_Number, 0.8, 0.9, 500)
-ds.prep.model$UM_AllChan_3p_Outbound_ReachedContacts <- adstock_it(ds.prep.model$UM_AllChan_3p_Outbound_ReachedContacts, 0.1, 0.9, 500)
+ds.prep.model$Comp_AllChan_HSIn_Spend <- adstock_it(ds.prep.model$Comp_AllChan_HSIn_Spend, 0.1, 0.1, 1000)
+# scalar transformations
+ds.prep.model$UM_DigitalIndir_AllProd_SalesSupport_Spend_Total <- ds.prep.model$UM_DigitalIndir_AllProd_SalesSupport_Spend_Total/500
 
+
+#  Model code second regression---------------------------------------------
 
 scaling_factor <- 1000
 complete.db <- ds.prep.model
@@ -214,6 +219,8 @@ names(model_beta) <- colnames(ind.Var)
 model_base <- kFilterSmooth$s[, dim(ind.Var)[2] + 1] * scaling_factor
 View(model_beta)
 
+# Calculate p-values ------------------------------------------------------
+
 cov <- dlmSvd2var(kFilterSmooth$U.S, kFilterSmooth$D.S)[-1]
 width <- t(qnorm(.95) * sqrt(sapply(cov,diag)))[1,1:dim(ind.Var)[2]]
 
@@ -223,20 +230,3 @@ pVal <- pnorm(-abs(zVal))
 pVal <- c(0.0, pVal)
 
 View(pVal)
-
-#
-# But (for example) the variable ...V4 needs to be "remove max"
-# "post model adjustment"
-#
-
-a <- (ind.Var$Comp_AllChan_3P_Effectively_Mtl_Price_Avg_Ranking_V1)
-a_max <- max(a)
-a_final <- a - a_max
-
-ind.Var$Comp_AllChan_3P_Effectively_Mtl_Price_Avg_Ranking_V1_T <- (ind.Var$Comp_AllChan_3P_Effectively_Mtl_Price_Avg_Ranking_V1 / a_max) #* 200 # This "200" is seen as scalar in the Modelling Process file from avesh
-
-ind.Var$Comp_AllChan_3P_Effectively_Mtl_Price_Avg_Ranking_V1 <- NULL
-
-out.data <- t(ind.Var)
-contribution1b <- model_beta1b*out.data
-

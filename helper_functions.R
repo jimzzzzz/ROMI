@@ -32,6 +32,7 @@ GetModel <- function(parm){
 }
 
 
+
 best_adstock <- function(var, dep_var, B){
   # a function that loops through a grid with possible adstock parameters 
   # and chooses the best ones based on their correlation with a given variable - dep_var
