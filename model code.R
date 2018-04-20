@@ -1,6 +1,3 @@
-scaling_factor <- 100
-vLevel <- NULL
-
 complete.db <- ds.prep.model
 dep.Var <- complete.db[,1]/scaling_factor
 ind.Var <- complete.db[,2:dim(complete.db)[2]]
@@ -35,7 +32,6 @@ names(model_beta) <- colnames(ind.Var)
 
 model_base <- kFilterSmooth$s[, dim(ind.Var)[2] + 1] * scaling_factor
 
-View(model_beta)
 
 # Calculate p-values ------------------------------------------------------
 
@@ -46,5 +42,3 @@ se <- scaling_factor* width/(1.96)
 zVal <- model_beta/se
 pVal <- pnorm(-abs(zVal))
 pVal <- c(0.0, pVal)
-
-View(pVal)

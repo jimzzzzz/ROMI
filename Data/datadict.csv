@@ -178,10 +178,10 @@ UM_Retailind_2P_TP100_EuroValue,Independent,UM,Retailind,2P,TP100,EuroValue,Prom
 UM_Digitaldir_2P_TP100_EuroValue,Independent,UM,Digitaldir,2P,TP100,EuroValue,Promo
 UM_Digitaldir_2P_TP134_EuroValue,Independent,UM,Digitaldir,2P,TP134,EuroValue,Promo
 UM_Digitalind_2P_TP134_EuroValue,Independent,UM,Digitalind,2P,TP134,EuroValue,Promo
-UM_D2DTeleout_3P_TP_EuroValue,Independent,UM,D2DTeleout,3P,TP,EuroValue,Promo
-UM_TeleinSiS_3P_TP_EuroValue,Independent,UM,TeleinSiS,3P,TP,EuroValue,Promo
-UM_Retaildir_3P_TP_EuroValue,Independent,UM,Retaildir,3P,TP,EuroValue,Promo
-UM_Retailind_3P_TP_EuroValue,Independent,UM,Retailind,3P,TP,EuroValue,Promo
+UM_D2DTeleout_3P_TP_EuroValue,Independent,UM,D2DTeleout,3P,TP,EuroValue,Missing
+UM_TeleinSiS_3P_TP_EuroValue,Independent,UM,TeleinSiS,3P,TP,EuroValue,Missing
+UM_Retaildir_3P_TP_EuroValue,Independent,UM,Retaildir,3P,TP,EuroValue,Missing
+UM_Retailind_3P_TP_EuroValue,Independent,UM,Retailind,3P,TP,EuroValue,Missing
 UM_Digitaldir_3P_TP134_EuroValue,Independent,UM,Digitaldir,3P,TP134,EuroValue,Promo
 UM_Digitalind_3P_TP134_EuroValue,Independent,UM,Digitalind,3P,TP134,EuroValue,Promo
 UM_AllChan_2P_LosWochos_Stepchange,Independent,UM,AllChan,2P,LosWochos,Stepchange,Promo
@@ -218,10 +218,10 @@ UM_Retailind_3P_HSIn_CPO1_SpendPerOE_H,Independent,UM,Retailind,3P_HSIn,CPO1,Spe
 UM_Retailind_BCS_CPO1_SpendPerOE_I,Independent,UM,Retailind,BCS,CPO1,SpendPerOE,CPO
 UM_Retailind_2P_HSIn_CPO2_SpendPerOE_J,Independent,UM,Retailind,2P_HSIn,CPO2,SpendPerOE,CPO
 UM_Retailind_3P_HSIn_CPO2_SpendPerOE_K,Independent,UM,Retailind,3P_HSIn,CPO2,SpendPerOE,CPO
-UM_Retailind_2P_HSIn_CPO 1b_2_SpendPerOE_L,Independent,UM,Retailind,2P_HSIn,CPO 1b_2,SpendPerOE,CPO
-UM_Retailind_3P_HSIn_CPO 1b_2_SpendPerOE_M,Independent,UM,Retailind,3P_HSIn,CPO 1b_2,SpendPerOE,CPO
-UM_Retailind_2P_HSIn_CPO1 _ 2_SpendPerOE_N,Independent,UM,Retailind,2P_HSIn,CPO1 _ 2,SpendPerOE,CPO
-UM_Retailind_3P_HSIn_CPO1 _ 2_SpendPerOE_O,Independent,UM,Retailind,3P_HSIn,CPO1 _ 2,SpendPerOE,CPO
+UM_Retailind_2P_HSIn_CPO1b_2_SpendPerOE_L,Independent,UM,Retailind,2P_HSIn,CPO 1b_2,SpendPerOE,CPO
+UM_Retailind_3P_HSIn_CPO1b_2_SpendPerOE_M,Independent,UM,Retailind,3P_HSIn,CPO 1b_2,SpendPerOE,CPO
+UM_Retailind_2P_HSIn_CPO1_2_SpendPerOE_N,Independent,UM,Retailind,2P_HSIn,CPO1 _ 2,SpendPerOE,CPO
+UM_Retailind_3P_HSIn_CPO1_2_SpendPerOE_O,Independent,UM,Retailind,3P_HSIn,CPO1 _ 2,SpendPerOE,CPO
 UM_Retailind_2P_HSIn_CPO3_Spend_P,Independent,UM,Retailind,2P_HSIn,CPO3,Spend,CPO
 UM_Retailind_3P_HSIn_CPO3_Spend_Q,Independent,UM,Retailind,3P_HSIn,CPO3,Spend,CPO
 UM_Retailind_BCS_CPO3_Spend_R,Independent,UM,Retailind,BCS,CPO3,Spend,CPO
@@ -240,9 +240,9 @@ UM_Retaildir_BCS_CPO2_SpendPerOE_L,Independent,UM,Retaildir,BCS,CPO2,SpendPerOE,
 UM_Retaildir_2P_HSIn_CPO1b_2_SpendPerOE_M,Independent,UM,Retaildir,2P_HSIn,CPO 1b_2,SpendPerOE,CPO
 UM_Retaildir_3P_HSIn_CPO1b_2_SpendPerOE_N,Independent,UM,Retaildir,3P_HSIn,CPO 1b_2,SpendPerOE,CPO
 UM_Retaildir_BCS_CPO1b_2_SpendPerOE_O,Independent,UM,Retaildir,BCS,CPO 1b_2,SpendPerOE,CPO
-UM_Retaildir_2P_HSIn_CPO1 _ 2_SpendPerOE_P,Independent,UM,Retaildir,2P_HSIn,CPO1 _ 2,SpendPerOE,CPO
-UM_Retaildir_3P_HSIn_CPO1 _ 2_SpendPerOE_Q,Independent,UM,Retaildir,3P_HSIn,CPO1 _ 2,SpendPerOE,CPO
-UM_Retaildir_BCS_CPO1 _ 2_SpendPerOE_R,Independent,UM,Retaildir,BCS,CPO1 _ 2,SpendPerOE,CPO
+UM_Retaildir_2P_HSIn_CPO1_2_SpendPerOE_P,Independent,UM,Retaildir,2P_HSIn,CPO1 _ 2,SpendPerOE,CPO
+UM_Retaildir_3P_HSIn_CPO1_2_SpendPerOE_Q,Independent,UM,Retaildir,3P_HSIn,CPO1 _ 2,SpendPerOE,CPO
+UM_Retaildir_BCS_CPO1_2_SpendPerOE_R,Independent,UM,Retaildir,BCS,CPO1 _ 2,SpendPerOE,CPO
 UM_Retaildir_2P_HSIn_CPO3_Spend_S,Independent,UM,Retaildir,2P_HSIn,CPO3,Spend,CPO
 UM_Retaildir_3P_HSIn_CPO3_Spend_T,Independent,UM,Retaildir,3P_HSIn,CPO3,Spend,CPO
 UM_Retaildir_BCS_CPO3_Spend_U,Independent,UM,Retaildir,BCS,CPO3,Spend,CPO
@@ -258,12 +258,12 @@ UM_D2DTeleout_BCS_CPO1_SpendPerOE_I,Independent,UM,D2DTeleout,BCS,CPO1,SpendPerO
 UM_D2DTeleout_2P_HSIn_CPO2_SpendPerOE_J,Independent,UM,D2DTeleout,2P_HSIn,CPO2,SpendPerOE,CPO
 UM_D2DTeleout_3P_HSIn_CPO2_SpendPerOE_K,Independent,UM,D2DTeleout,3P_HSIn,CPO2,SpendPerOE,CPO
 UM_D2DTeleout_BCS_CPO2_SpendPerOE_L,Independent,UM,D2DTeleout,BCS,CPO2,SpendPerOE,CPO
-UM_D2DTeleout_2P_HSIn_CPO 1b_2_SpendPerOE_M,Independent,UM,D2DTeleout,2P_HSIn,CPO 1b_2,SpendPerOE,CPO
-UM_D2DTeleout_3P_HSIn_CPO 1b_2_SpendPerOE_N,Independent,UM,D2DTeleout,3P_HSIn,CPO 1b_2,SpendPerOE,CPO
-UM_D2DTeleout_BCS_CPO 1b_2_SpendPerOE_O,Independent,UM,D2DTeleout,BCS,CPO 1b_2,SpendPerOE,CPO
-UM_D2DTeleout_2P_HSIn_CPO1 _ 2_SpendPerOE_P,Independent,UM,D2DTeleout,2P_HSIn,CPO1 _ 2,SpendPerOE,CPO
-UM_D2DTeleout_3P_HSIn_CPO1 _ 2_SpendPerOE_Q,Independent,UM,D2DTeleout,3P_HSIn,CPO1 _ 2,SpendPerOE,CPO
-UM_D2DTeleout_BCS_CPO1 _ 2_SpendPerOE_R,Independent,UM,D2DTeleout,BCS,CPO1 _ 2,SpendPerOE,CPO
+UM_D2DTeleout_2P_HSIn_CPO1b_2_SpendPerOE_M,Independent,UM,D2DTeleout,2P_HSIn,CPO 1b_2,SpendPerOE,CPO
+UM_D2DTeleout_3P_HSIn_CPO1b_2_SpendPerOE_N,Independent,UM,D2DTeleout,3P_HSIn,CPO 1b_2,SpendPerOE,CPO
+UM_D2DTeleout_BCS_CPO1b_2_SpendPerOE_O,Independent,UM,D2DTeleout,BCS,CPO 1b_2,SpendPerOE,CPO
+UM_D2DTeleout_2P_HSIn_CPO1_2_SpendPerOE_P,Independent,UM,D2DTeleout,2P_HSIn,CPO1 _ 2,SpendPerOE,CPO
+UM_D2DTeleout_3P_HSIn_CPO1_2_SpendPerOE_Q,Independent,UM,D2DTeleout,3P_HSIn,CPO1 _ 2,SpendPerOE,CPO
+UM_D2DTeleout_BCS_CPO1_2_SpendPerOE_R,Independent,UM,D2DTeleout,BCS,CPO1 _ 2,SpendPerOE,CPO
 UM_D2DTeleout_2P_HSIn_CPO3_Spend_S,Independent,UM,D2DTeleout,2P_HSIn,CPO3,Spend,CPO
 UM_D2DTeleout_3P_HSIn_CPO3_Spend_T,Independent,UM,D2DTeleout,3P_HSIn,CPO3,Spend,CPO
 UM_D2DTeleout_BCS_CPO3_Spend_U,Independent,UM,D2DTeleout,BCS,CPO3,Spend,CPO
@@ -335,12 +335,12 @@ UM_Retaildir_AllProd_POSPromotion_Spend,Independent,UM,Retaildir,AllProd,POSProm
 UM_DigitalIndir_AllProd_AvgCommPaid_Euros_2016n17,Independent,UM,DigitalIndir,AllProd,AvgCommPaid,Euros,Promo
 UM_DigitalIndir_AllProd_AvgCommPaidAdjforLag_Euros_2016n17,Independent,UM,DigitalIndir,AllProd,AvgCommPaidAdjforLag,Euros,Promo
 UM_DigitalIndir_AllProd_AvgCashBackPaid_Euros_2016n17,Independent,UM,DigitalIndir,AllProd,AvgCashBackPaid,Euros,Promo
-UM_AllChan_AllProd_ProgFB_Impressions,Independent,UM,AllChan,AllProd,ProgFB,Impressions,Digital
-UM_AllChan_AllProd_ProgFB_Clicks,Independent,UM,AllChan,AllProd,ProgFB,Clicks,Digital
-UM_AllChan_AllProd_ProgFB_Spend,Independent,UM,AllChan,AllProd,ProgFB,Spend,Digital
-UM_AllChan_AllProd_ProgNative_Impressions,Independent,UM,AllChan,AllProd,ProgNative,Impressions,Digital
-UM_AllChan_AllProd_ProgNative_Clicks,Independent,UM,AllChan,AllProd,ProgNative,Clicks,Digital
-UM_AllChan_AllProd_ProgNative_Spend,Independent,UM,AllChan,AllProd,ProgNative,Spend,Digital
+UM_AllChan_AllProd_ProgFB_Impressions,Independent,UM,AllChan,AllProd,ProgFB,Impressions,Missing
+UM_AllChan_AllProd_ProgFB_Clicks,Independent,UM,AllChan,AllProd,ProgFB,Clicks,Missing
+UM_AllChan_AllProd_ProgFB_Spend,Independent,UM,AllChan,AllProd,ProgFB,Spend,Missing
+UM_AllChan_AllProd_ProgNative_Impressions,Independent,UM,AllChan,AllProd,ProgNative,Impressions,Missing
+UM_AllChan_AllProd_ProgNative_Clicks,Independent,UM,AllChan,AllProd,ProgNative,Clicks,Missing
+UM_AllChan_AllProd_ProgNative_Spend,Independent,UM,AllChan,AllProd,ProgNative,Spend,Missing
 UM_AllChan_AllProd_ProgStandard_Impressions,Independent,UM,AllChan,AllProd,ProgStandard,Impressions,Digital
 UM_AllChan_AllProd_ProgStandard_Clicks,Independent,UM,AllChan,AllProd,ProgStandard,Clicks,Digital
 UM_AllChan_AllProd_ProgStandard_Spend,Independent,UM,AllChan,AllProd,ProgStandard,Spend,Digital
@@ -359,12 +359,12 @@ UM_AllChan_B2B_ProgVideo_Spend,Independent,UM,AllChan,B2B,ProgVideo,Spend,Digita
 UM_AllChan_HSIn_ProgVideo_Impressions,Independent,UM,AllChan,HSIn,ProgVideo,Impressions,Digital
 UM_AllChan_HSIn_ProgVideo_Clicks,Independent,UM,AllChan,HSIn,ProgVideo,Clicks,Digital
 UM_AllChan_HSIn_ProgVideo_Spend,Independent,UM,AllChan,HSIn,ProgVideo,Spend,Digital
-UM_AllChan_AllProd_ProgStandard_sum_Impressions,Independent,UM,AllChan,AllProd,ProgStandard_sum,Impressions,Digital
-UM_AllChan_AllProd_ProgStandard_sum_Clicks,Independent,UM,AllChan,AllProd,ProgStandard_sum,Clicks,Digital
-UM_AllChan_AllProd_ProgStandard_sum_Spend,Independent,UM,AllChan,AllProd,ProgStandard_sum,Spend,Digital
-UM_AllChan_AllProd_ProgVideo_sum_Impressions,Independent,UM,AllChan,AllProd,ProgVideo_sum,Impressions,Digital
-UM_AllChan_AllProd_ProgVideo_sum_Clicks,Independent,UM,AllChan,AllProd,ProgVideo_sum,Clicks,Digital
-UM_AllChan_AllProd_ProgVideo_sum_Spend,Independent,UM,AllChan,AllProd,ProgVideo_sum,Spend,Digital
+UM_AllChan_AllProd_ProgStandard_sum_Impressions,Independent,UM,AllChan,AllProd,ProgStandard_sum,Impressions,Missing
+UM_AllChan_AllProd_ProgStandard_sum_Clicks,Independent,UM,AllChan,AllProd,ProgStandard_sum,Clicks,Missing
+UM_AllChan_AllProd_ProgStandard_sum_Spend,Independent,UM,AllChan,AllProd,ProgStandard_sum,Spend,Missing
+UM_AllChan_AllProd_ProgVideo_sum_Impressions,Independent,UM,AllChan,AllProd,ProgVideo_sum,Impressions,Missing
+UM_AllChan_AllProd_ProgVideo_sum_Clicks,Independent,UM,AllChan,AllProd,ProgVideo_sum,Clicks,Missing
+UM_AllChan_AllProd_ProgVideo_sum_Spend,Independent,UM,AllChan,AllProd,ProgVideo_sum,Spend,Missing
 UM_AllChan_B2B_sum_Impressions,Independent,UM,AllChan,B2B,sum,Impressions,Digital
 UM_AllChan_Non_B2B_sum_Impressions,Independent,UM,AllChan,Non_B2B,sum,Impressions,Digital
 UM_AllChan_AllProd_ProgrammaticTot_Impressions,Independent,UM,AllChan,AllProd,ProgrammaticTot,Impressions,Digital
@@ -455,83 +455,83 @@ UM_AllChan_AllProd_SocialYoutube_Views,Independent,UM,AllChan,AllProd,SocialYout
 UM_AllChan_AllProd_SocialYoutube_SpendGross,Independent,UM,AllChan,AllProd,SocialYoutube,SpendGross,Digital
 UM_AllChan_AllProd_SocialYoutube_SpendNet,Independent,UM,AllChan,AllProd,SocialYoutube,SpendNet,Digital
 UM_AllChan_AllProd_SocialFBInsta_Impressions,Independent,UM,AllChan,AllProd,SocialFB&Insta,Impressions,Digital
-UM_AllChan_AllProd_SocialFB&Insta_Clicks,Independent,UM,AllChan,AllProd,SocialFB&Insta,Clicks,Digital
-UM_AllChan_AllProd_SocialFB&Insta_Websiteclicks,Independent,UM,AllChan,AllProd,SocialFB&Insta,Websiteclicks,Digital
-UM_AllChan_AllProd_SocialFB&Insta_Views,Independent,UM,AllChan,AllProd,SocialFB&Insta,Views,Digital
-UM_AllChan_AllProd_SocialFB&Insta_SpendGross,Independent,UM,AllChan,AllProd,SocialFB&Insta,SpendGross,Digital
-UM_AllChan_AllProd_SocialFB&Insta_SpendNet,Independent,UM,AllChan,AllProd,SocialFB&Insta,SpendNet,Digital
-UM_AllChan_HSIn_SocialFB&Insta_Impressions,Independent,UM,AllChan,HSIn,SocialFB&Insta,Impressions,Digital
-UM_AllChan_HSIn_SocialFB&Insta_Clicks,Independent,UM,AllChan,HSIn,SocialFB&Insta,Clicks,Digital
-UM_AllChan_HSIn_SocialFB&Insta_Websiteclicks,Independent,UM,AllChan,HSIn,SocialFB&Insta,Websiteclicks,Digital
-UM_AllChan_HSIn_SocialFB&Insta_Views,Independent,UM,AllChan,HSIn,SocialFB&Insta,Views,Digital
-UM_AllChan_HSIn_SocialFB&Insta_SpendGross,Independent,UM,AllChan,HSIn,SocialFB&Insta,SpendGross,Digital
-UM_AllChan_HSIn_SocialFB&Insta_SpendNet,Independent,UM,AllChan,HSIn,SocialFB&Insta,SpendNet,Digital
-UM_AllChan_TV_SocialFB&Insta_Impressions,Independent,UM,AllChan,TV,SocialFB&Insta,Impressions,Digital
-UM_AllChan_TV_SocialFB&Insta_Clicks,Independent,UM,AllChan,TV,SocialFB&Insta,Clicks,Digital
-UM_AllChan_TV_SocialFB&Insta_Websiteclicks,Independent,UM,AllChan,TV,SocialFB&Insta,Websiteclicks,Digital
-UM_AllChan_TV_SocialFB&Insta_Views,Independent,UM,AllChan,TV,SocialFB&Insta,Views,Digital
-UM_AllChan_TV_SocialFB&Insta_SpendGross,Independent,UM,AllChan,TV,SocialFB&Insta,SpendGross,Digital
-UM_AllChan_TV_SocialFB&Insta_SpendNet,Independent,UM,AllChan,TV,SocialFB&Insta,SpendNet,Digital
-UM_AllChan_1P_SocialFB&Insta_Impressions,Independent,UM,AllChan,1P,SocialFB&Insta,Impressions,Digital
-UM_AllChan_1P_SocialFB&Insta_Clicks,Independent,UM,AllChan,1P,SocialFB&Insta,Clicks,Digital
-UM_AllChan_1P_SocialFB&Insta_Websiteclicks,Independent,UM,AllChan,1P,SocialFB&Insta,Websiteclicks,Digital
-UM_AllChan_1P_SocialFB&Insta_Views,Independent,UM,AllChan,1P,SocialFB&Insta,Views,Digital
-UM_AllChan_1P_SocialFB&Insta_SpendGross,Independent,UM,AllChan,1P,SocialFB&Insta,SpendGross,Digital
-UM_AllChan_1P_SocialFB&Insta_SpendNet,Independent,UM,AllChan,1P,SocialFB&Insta,SpendNet,Digital
-UM_AllChan_2P_SocialFB&Insta_Impressions,Independent,UM,AllChan,2P,SocialFB&Insta,Impressions,Digital
-UM_AllChan_2P_SocialFB&Insta_Clicks,Independent,UM,AllChan,2P,SocialFB&Insta,Clicks,Digital
-UM_AllChan_2P_SocialFB&Insta_Websiteclicks,Independent,UM,AllChan,2P,SocialFB&Insta,Websiteclicks,Digital
-UM_AllChan_2P_SocialFB&Insta_Views,Independent,UM,AllChan,2P,SocialFB&Insta,Views,Digital
-UM_AllChan_2P_SocialFB&Insta_SpendGross,Independent,UM,AllChan,2P,SocialFB&Insta,SpendGross,Digital
-UM_AllChan_2P_SocialFB&Insta_SpendNet,Independent,UM,AllChan,2P,SocialFB&Insta,SpendNet,Digital
-UM_AllChan_3P_SocialFB&Insta_Impressions,Independent,UM,AllChan,3P,SocialFB&Insta,Impressions,Digital
-UM_AllChan_3P_SocialFB&Insta_Clicks,Independent,UM,AllChan,3P,SocialFB&Insta,Clicks,Digital
-UM_AllChan_3P_SocialFB&Insta_Websiteclicks,Independent,UM,AllChan,3P,SocialFB&Insta,Websiteclicks,Digital
-UM_AllChan_3P_SocialFB&Insta_Views,Independent,UM,AllChan,3P,SocialFB&Insta,Views,Digital
-UM_AllChan_3P_SocialFB&Insta_SpendGross,Independent,UM,AllChan,3P,SocialFB&Insta,SpendGross,Digital
-UM_AllChan_3P_SocialFB&Insta_SpendNet,Independent,UM,AllChan,3P,SocialFB&Insta,SpendNet,Digital
-UM_AllChan_TEL_SocialFB&Insta_Impressions,Independent,UM,AllChan,TEL,SocialFB&Insta,Impressions,Digital
-UM_AllChan_TEL_SocialFB&Insta_Clicks,Independent,UM,AllChan,TEL,SocialFB&Insta,Clicks,Digital
-UM_AllChan_TEL_SocialFB&Insta_Websiteclicks,Independent,UM,AllChan,TEL,SocialFB&Insta,Websiteclicks,Digital
-UM_AllChan_TEL_SocialFB&Insta_Views,Independent,UM,AllChan,TEL,SocialFB&Insta,Views,Digital
-UM_AllChan_TEL_SocialFB&Insta_SpendGross,Independent,UM,AllChan,TEL,SocialFB&Insta,SpendGross,Digital
-UM_AllChan_TEL_SocialFB&Insta_SpendNet,Independent,UM,AllChan,TEL,SocialFB&Insta,SpendNet,Digital
-UM_AllChan_B2B_SocialFB&Insta_Impressions,Independent,UM,AllChan,B2B,SocialFB&Insta,Impressions,Digital
-UM_AllChan_B2B_SocialFB&Insta_Clicks,Independent,UM,AllChan,B2B,SocialFB&Insta,Clicks,Digital
-UM_AllChan_B2B_SocialFB&Insta_Websiteclicks,Independent,UM,AllChan,B2B,SocialFB&Insta,Websiteclicks,Digital
-UM_AllChan_B2B_SocialFB&Insta_Views,Independent,UM,AllChan,B2B,SocialFB&Insta,Views,Digital
-UM_AllChan_B2B_SocialFB&Insta_SpendGross,Independent,UM,AllChan,B2B,SocialFB&Insta,SpendGross,Digital
-UM_AllChan_B2B_SocialFB&Insta_SpendNet,Independent,UM,AllChan,B2B,SocialFB&Insta,SpendNet,Digital
-UM_AllChan_TotSocialFB&Insta_SocialFB&InstaTot_Impressions,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,Impressions,Digital
-UM_AllChan_TotSocialFB&Insta_SocialFB&InstaTot_Clicks,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,Clicks,Digital
-UM_AllChan_TotSocialFB&Insta_SocialFB&InstaTot_Websiteclicks,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,Websiteclicks,Digital
-UM_AllChan_TotSocialFB&Insta_SocialFB&InstaTot_Views,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,Views,Digital
-UM_AllChan_TotSocialFB&Insta_SocialFB&InstaTot_SpendGross,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,SpendGross,Digital
-UM_AllChan_TotSocialFB&Insta_SocialFB&InstaTot_SpendNet,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,SpendNet,Digital
+UM_AllChan_AllProd_SocialFBInsta_Clicks,Independent,UM,AllChan,AllProd,SocialFB&Insta,Clicks,Digital
+UM_AllChan_AllProd_SocialFBInsta_Websiteclicks,Independent,UM,AllChan,AllProd,SocialFB&Insta,Websiteclicks,Digital
+UM_AllChan_AllProd_SocialFBInsta_Views,Independent,UM,AllChan,AllProd,SocialFB&Insta,Views,Digital
+UM_AllChan_AllProd_SocialFBInsta_SpendGross,Independent,UM,AllChan,AllProd,SocialFB&Insta,SpendGross,Digital
+UM_AllChan_AllProd_SocialFBInsta_SpendNet,Independent,UM,AllChan,AllProd,SocialFB&Insta,SpendNet,Digital
+UM_AllChan_HSIn_SocialFBInsta_Impressions,Independent,UM,AllChan,HSIn,SocialFB&Insta,Impressions,Digital
+UM_AllChan_HSIn_SocialFBInsta_Clicks,Independent,UM,AllChan,HSIn,SocialFB&Insta,Clicks,Digital
+UM_AllChan_HSIn_SocialFBInsta_Websiteclicks,Independent,UM,AllChan,HSIn,SocialFB&Insta,Websiteclicks,Digital
+UM_AllChan_HSIn_SocialFBInsta_Views,Independent,UM,AllChan,HSIn,SocialFB&Insta,Views,Digital
+UM_AllChan_HSIn_SocialFBInsta_SpendGross,Independent,UM,AllChan,HSIn,SocialFB&Insta,SpendGross,Digital
+UM_AllChan_HSIn_SocialFBInsta_SpendNet,Independent,UM,AllChan,HSIn,SocialFB&Insta,SpendNet,Digital
+UM_AllChan_TV_SocialFBInsta_Impressions,Independent,UM,AllChan,TV,SocialFB&Insta,Impressions,Digital
+UM_AllChan_TV_SocialFBInsta_Clicks,Independent,UM,AllChan,TV,SocialFB&Insta,Clicks,Digital
+UM_AllChan_TV_SocialFBInsta_Websiteclicks,Independent,UM,AllChan,TV,SocialFB&Insta,Websiteclicks,Digital
+UM_AllChan_TV_SocialFBInsta_Views,Independent,UM,AllChan,TV,SocialFB&Insta,Views,Digital
+UM_AllChan_TV_SocialFBInsta_SpendGross,Independent,UM,AllChan,TV,SocialFB&Insta,SpendGross,Digital
+UM_AllChan_TV_SocialFBInsta_SpendNet,Independent,UM,AllChan,TV,SocialFB&Insta,SpendNet,Digital
+UM_AllChan_1P_SocialFBInsta_Impressions,Independent,UM,AllChan,1P,SocialFB&Insta,Impressions,Digital
+UM_AllChan_1P_SocialFBInsta_Clicks,Independent,UM,AllChan,1P,SocialFB&Insta,Clicks,Digital
+UM_AllChan_1P_SocialFBInsta_Websiteclicks,Independent,UM,AllChan,1P,SocialFB&Insta,Websiteclicks,Digital
+UM_AllChan_1P_SocialFBInsta_Views,Independent,UM,AllChan,1P,SocialFB&Insta,Views,Digital
+UM_AllChan_1P_SocialFBInsta_SpendGross,Independent,UM,AllChan,1P,SocialFB&Insta,SpendGross,Digital
+UM_AllChan_1P_SocialFBInsta_SpendNet,Independent,UM,AllChan,1P,SocialFB&Insta,SpendNet,Digital
+UM_AllChan_2P_SocialFBInsta_Impressions,Independent,UM,AllChan,2P,SocialFB&Insta,Impressions,Digital
+UM_AllChan_2P_SocialFBInsta_Clicks,Independent,UM,AllChan,2P,SocialFB&Insta,Clicks,Digital
+UM_AllChan_2P_SocialFBInsta_Websiteclicks,Independent,UM,AllChan,2P,SocialFB&Insta,Websiteclicks,Digital
+UM_AllChan_2P_SocialFBInsta_Views,Independent,UM,AllChan,2P,SocialFB&Insta,Views,Digital
+UM_AllChan_2P_SocialFBInsta_SpendGross,Independent,UM,AllChan,2P,SocialFB&Insta,SpendGross,Digital
+UM_AllChan_2P_SocialFBInsta_SpendNet,Independent,UM,AllChan,2P,SocialFB&Insta,SpendNet,Digital
+UM_AllChan_3P_SocialFBInsta_Impressions,Independent,UM,AllChan,3P,SocialFB&Insta,Impressions,Digital
+UM_AllChan_3P_SocialFBInsta_Clicks,Independent,UM,AllChan,3P,SocialFB&Insta,Clicks,Digital
+UM_AllChan_3P_SocialFBInsta_Websiteclicks,Independent,UM,AllChan,3P,SocialFB&Insta,Websiteclicks,Digital
+UM_AllChan_3P_SocialFBInsta_Views,Independent,UM,AllChan,3P,SocialFB&Insta,Views,Digital
+UM_AllChan_3P_SocialFBInsta_SpendGross,Independent,UM,AllChan,3P,SocialFB&Insta,SpendGross,Digital
+UM_AllChan_3P_SocialFBInsta_SpendNet,Independent,UM,AllChan,3P,SocialFB&Insta,SpendNet,Digital
+UM_AllChan_TEL_SocialFBInsta_Impressions,Independent,UM,AllChan,TEL,SocialFB&Insta,Impressions,Digital
+UM_AllChan_TEL_SocialFBInsta_Clicks,Independent,UM,AllChan,TEL,SocialFB&Insta,Clicks,Digital
+UM_AllChan_TEL_SocialFBInsta_Websiteclicks,Independent,UM,AllChan,TEL,SocialFB&Insta,Websiteclicks,Digital
+UM_AllChan_TEL_SocialFBInsta_Views,Independent,UM,AllChan,TEL,SocialFB&Insta,Views,Digital
+UM_AllChan_TEL_SocialFBInsta_SpendGross,Independent,UM,AllChan,TEL,SocialFB&Insta,SpendGross,Digital
+UM_AllChan_TEL_SocialFBInsta_SpendNet,Independent,UM,AllChan,TEL,SocialFB&Insta,SpendNet,Digital
+UM_AllChan_B2B_SocialFBInsta_Impressions,Independent,UM,AllChan,B2B,SocialFB&Insta,Impressions,Digital
+UM_AllChan_B2B_SocialFBInsta_Clicks,Independent,UM,AllChan,B2B,SocialFB&Insta,Clicks,Digital
+UM_AllChan_B2B_SocialFBInsta_Websiteclicks,Independent,UM,AllChan,B2B,SocialFB&Insta,Websiteclicks,Digital
+UM_AllChan_B2B_SocialFBInsta_Views,Independent,UM,AllChan,B2B,SocialFB&Insta,Views,Digital
+UM_AllChan_B2B_SocialFBInsta_SpendGross,Independent,UM,AllChan,B2B,SocialFB&Insta,SpendGross,Digital
+UM_AllChan_B2B_SocialFBInsta_SpendNet,Independent,UM,AllChan,B2B,SocialFB&Insta,SpendNet,Digital
+UM_AllChan_TotSocialFBInsta_SocialFBInstaTot_Impressions,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,Impressions,Digital
+UM_AllChan_TotSocialFBInsta_SocialFBInstaTot_Clicks,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,Clicks,Digital
+UM_AllChan_TotSocialFBInsta_SocialFBInstaTot_Websiteclicks,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,Websiteclicks,Digital
+UM_AllChan_TotSocialFBInsta_SocialFBInstaTot_Views,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,Views,Digital
+UM_AllChan_TotSocialFBInsta_SocialFBInstaTot_SpendGross,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,SpendGross,Digital
+UM_AllChan_TotSocialFBInsta_SocialFBInstaTot_SpendNet,Independent,UM,AllChan,TotSocialFB&Insta,SocialFB&InstaTot,SpendNet,Digital
 UM_AllChan_1P_PaidSearch_Impressions_Brand_2016n17,Independent,UM,AllChan,1P,PaidSearch,Impressions,Search
 UM_AllChan_1P_PaidSearch_Clicks_Brand_2016n17,Independent,UM,AllChan,1P,PaidSearch,Clicks,Search
 UM_AllChan_1P_PaidSearch_Cost_Brand_2016n17,Independent,UM,AllChan,1P,PaidSearch,Cost,Search
-UM_AllChan_1P_PaidSearch_Impressions_Non-Brand,Independent,UM,AllChan,1P,PaidSearch,Impressions,Search
-UM_AllChan_1P_PaidSearch_Clicks_Non-Brand,Independent,UM,AllChan,1P,PaidSearch,Clicks,Search
-UM_AllChan_1P_PaidSearch_Cost_Non-Brand,Independent,UM,AllChan,1P,PaidSearch,Cost,Search
+UM_AllChan_1P_PaidSearch_Impressions_NonBrand,Independent,UM,AllChan,1P,PaidSearch,Impressions,Search
+UM_AllChan_1P_PaidSearch_Clicks_NonBrand,Independent,UM,AllChan,1P,PaidSearch,Clicks,Search
+UM_AllChan_1P_PaidSearch_Cost_NonBrand,Independent,UM,AllChan,1P,PaidSearch,Cost,Search
 UM_AllChan_1P_PaidSearch_Impressions_Product,Independent,UM,AllChan,1P,PaidSearch,Impressions,Search
 UM_AllChan_1P_PaidSearch_Clicks_Product,Independent,UM,AllChan,1P,PaidSearch,Clicks,Search
 UM_AllChan_1P_PaidSearch_Cost_Product,Independent,UM,AllChan,1P,PaidSearch,Cost,Search
 UM_AllChan_2P_PaidSearch_Impressions_Brand,Independent,UM,AllChan,2P,PaidSearch,Impressions,Search
 UM_AllChan_2P_PaidSearch_Clicks_Brand,Independent,UM,AllChan,2P,PaidSearch,Clicks,Search
 UM_AllChan_2P_PaidSearch_Cost_Brand,Independent,UM,AllChan,2P,PaidSearch,Cost,Search
-UM_AllChan_2P_PaidSearch_Impressions_Non-Brand,Independent,UM,AllChan,2P,PaidSearch,Impressions,Search
-UM_AllChan_2P_PaidSearch_Clicks_Non-Brand,Independent,UM,AllChan,2P,PaidSearch,Clicks,Search
-UM_AllChan_2P_PaidSearch_Cost_Non-Brand,Independent,UM,AllChan,2P,PaidSearch,Cost,Search
+UM_AllChan_2P_PaidSearch_Impressions_NonBrand,Independent,UM,AllChan,2P,PaidSearch,Impressions,Search
+UM_AllChan_2P_PaidSearch_Clicks_NonBrand,Independent,UM,AllChan,2P,PaidSearch,Clicks,Search
+UM_AllChan_2P_PaidSearch_Cost_NonBrand,Independent,UM,AllChan,2P,PaidSearch,Cost,Search
 UM_AllChan_2P_PaidSearch_Impressions_Product,Independent,UM,AllChan,2P,PaidSearch,Impressions,Search
 UM_AllChan_2P_PaidSearch_Clicks_Product,Independent,UM,AllChan,2P,PaidSearch,Clicks,Search
 UM_AllChan_2P_PaidSearch_Cost_Product,Independent,UM,AllChan,2P,PaidSearch,Cost,Search
 UM_AllChan_3P_PaidSearch_Impressions_Brand,Independent,UM,AllChan,3P,PaidSearch,Impressions,Search
 UM_AllChan_3P_PaidSearch_Clicks_Brand,Independent,UM,AllChan,3P,PaidSearch,Clicks,Search
 UM_AllChan_3P_PaidSearch_Cost_Brand,Independent,UM,AllChan,3P,PaidSearch,Cost,Search
-UM_AllChan_3P_PaidSearch_Impressions_Non-Brand,Independent,UM,AllChan,3P,PaidSearch,Impressions,Search
-UM_AllChan_3P_PaidSearch_Clicks_Non-Brand,Independent,UM,AllChan,3P,PaidSearch,Clicks,Search
-UM_AllChan_3P_PaidSearch_Cost_Non-Brand,Independent,UM,AllChan,3P,PaidSearch,Cost,Search
+UM_AllChan_3P_PaidSearch_Impressions_NonBrand,Independent,UM,AllChan,3P,PaidSearch,Impressions,Search
+UM_AllChan_3P_PaidSearch_Clicks_NonBrand,Independent,UM,AllChan,3P,PaidSearch,Clicks,Search
+UM_AllChan_3P_PaidSearch_Cost_NonBrand,Independent,UM,AllChan,3P,PaidSearch,Cost,Search
 UM_AllChan_3P_PaidSearch_Impressions_Product,Independent,UM,AllChan,3P,PaidSearch,Impressions,Search
 UM_AllChan_3P_PaidSearch_Clicks_Product,Independent,UM,AllChan,3P,PaidSearch,Clicks,Search
 UM_AllChan_3P_PaidSearch_Cost_Product,Independent,UM,AllChan,3P,PaidSearch,Cost,Search
@@ -541,27 +541,27 @@ UM_AllChan_AllProd_PaidSearch_Cost_Brand,Independent,UM,AllChan,AllProd,PaidSear
 UM_AllChan_HSIn_PaidSearch_Impressions_Brand,Independent,UM,AllChan,HSIn,PaidSearch,Impressions,Search
 UM_AllChan_HSIn_PaidSearch_Clicks_Brand,Independent,UM,AllChan,HSIn,PaidSearch,Clicks,Search
 UM_AllChan_HSIn_PaidSearch_Cost_Brand,Independent,UM,AllChan,HSIn,PaidSearch,Cost,Search
-UM_AllChan_HSIn_PaidSearch_Impressions_Non-Brand,Independent,UM,AllChan,HSIn,PaidSearch,Impressions,Search
-UM_AllChan_HSIn_PaidSearch_Clicks_Non-Brand,Independent,UM,AllChan,HSIn,PaidSearch,Clicks,Search
-UM_AllChan_HSIn_PaidSearch_Cost_Non-Brand,Independent,UM,AllChan,HSIn,PaidSearch,Cost,Search
+UM_AllChan_HSIn_PaidSearch_Impressions_NonBrand,Independent,UM,AllChan,HSIn,PaidSearch,Impressions,Search
+UM_AllChan_HSIn_PaidSearch_Clicks_NonBrand,Independent,UM,AllChan,HSIn,PaidSearch,Clicks,Search
+UM_AllChan_HSIn_PaidSearch_Cost_NonBrand,Independent,UM,AllChan,HSIn,PaidSearch,Cost,Search
 UM_AllChan_HSIn_PaidSearch_Impressions_Product,Independent,UM,AllChan,HSIn,PaidSearch,Impressions,Search
 UM_AllChan_HSIn_PaidSearch_Clicks_Product,Independent,UM,AllChan,HSIn,PaidSearch,Clicks,Search
 UM_AllChan_HSIn_PaidSearch_Cost_Product,Independent,UM,AllChan,HSIn,PaidSearch,Cost,Search
 UM_AllChan_TEL_PaidSearch_Impressions_Brand,Independent,UM,AllChan,TEL,PaidSearch,Impressions,Search
 UM_AllChan_TEL_PaidSearch_Clicks_Brand,Independent,UM,AllChan,TEL,PaidSearch,Clicks,Search
 UM_AllChan_TEL_PaidSearch_Cost_Brand,Independent,UM,AllChan,TEL,PaidSearch,Cost,Search
-UM_AllChan_TEL_PaidSearch_Impressions_Non-Brand,Independent,UM,AllChan,TEL,PaidSearch,Impressions,Search
-UM_AllChan_TEL_PaidSearch_Clicks_Non-Brand,Independent,UM,AllChan,TEL,PaidSearch,Clicks,Search
-UM_AllChan_TEL_PaidSearch_Cost_Non-Brand,Independent,UM,AllChan,TEL,PaidSearch,Cost,Search
+UM_AllChan_TEL_PaidSearch_Impressions_NonBrand,Independent,UM,AllChan,TEL,PaidSearch,Impressions,Search
+UM_AllChan_TEL_PaidSearch_Clicks_NonBrand,Independent,UM,AllChan,TEL,PaidSearch,Clicks,Search
+UM_AllChan_TEL_PaidSearch_Cost_NonBrand,Independent,UM,AllChan,TEL,PaidSearch,Cost,Search
 UM_AllChan_TEL_PaidSearch_Impressions_Product,Independent,UM,AllChan,TEL,PaidSearch,Impressions,Search
 UM_AllChan_TEL_PaidSearch_Clicks_Product,Independent,UM,AllChan,TEL,PaidSearch,Clicks,Search
 UM_AllChan_TEL_PaidSearch_Cost_Product,Independent,UM,AllChan,TEL,PaidSearch,Cost,Search
 UM_AllChan_TV_PaidSearch_Impressions_Brand,Independent,UM,AllChan,TV,PaidSearch,Impressions,Search
 UM_AllChan_TV_PaidSearch_Clicks_Brand,Independent,UM,AllChan,TV,PaidSearch,Clicks,Search
 UM_AllChan_TV_PaidSearch_Cost_Brand,Independent,UM,AllChan,TV,PaidSearch,Cost,Search
-UM_AllChan_TV_PaidSearch_Impressions_Non-Brand,Independent,UM,AllChan,TV,PaidSearch,Impressions,Search
-UM_AllChan_TV_PaidSearch_Clicks_Non-Brand,Independent,UM,AllChan,TV,PaidSearch,Clicks,Search
-UM_AllChan_TV_PaidSearch_Cost_Non-Brand,Independent,UM,AllChan,TV,PaidSearch,Cost,Search
+UM_AllChan_TV_PaidSearch_Impressions_NonBrand,Independent,UM,AllChan,TV,PaidSearch,Impressions,Search
+UM_AllChan_TV_PaidSearch_Clicks_NonBrand,Independent,UM,AllChan,TV,PaidSearch,Clicks,Search
+UM_AllChan_TV_PaidSearch_Cost_NonBrand,Independent,UM,AllChan,TV,PaidSearch,Cost,Search
 UM_AllChan_TV_PaidSearch_Impressions_Product,Independent,UM,AllChan,TV,PaidSearch,Impressions,Search
 UM_AllChan_TV_PaidSearch_Clicks_Product,Independent,UM,AllChan,TV,PaidSearch,Clicks,Search
 UM_AllChan_TV_PaidSearch_Cost_Product,Independent,UM,AllChan,TV,PaidSearch,Cost,Search
@@ -618,7 +618,7 @@ UM_AllChan_2P_LosWochos_ScarcityIndicator,Independent,UM,AllChan,2P,LosWochos_Sc
 UM_AllChan_AllProd_NationalHolidays_GeoWeightedDays,Independent,UM,AllChan,AllProd,NationalHolidays,GeoWeightedDays,Seasonal
 UM_AllChan_AllProd_HolidaysXmas_NY_GeoWeightedDays,Independent,UM,AllChan,AllProd,HolidaysXmas,GeoWeightedDays,Seasonal
 UM_AllChan_2P_TradePress_SpendGross,Independent,UM,AllChan,2P,TradePress,SpendGross,Spend
-UM_AllChan_2P_PaidSearch_Impressions_Non-Brand_Product,Independent,UM,AllChan,2P,PaidSearch,Impressions,Search
+UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product,Independent,UM,AllChan,2P,PaidSearch,Impressions,Search
 UM_AllChan_MSI_Discount15End_Dummy,Independent,UM,AllChan,MSI,Discount,Dummy,Promo
 UM_AllChan_MSI_PostDiscount15_Dummy,Independent,UM,AllChan,MSI,Discount,Dummy,Promo
 UM_AllChan_Internet_Radio_SpendGross,Independent,UM,AllChan,Internet,Internet_Radio,SpendGross,Spend
@@ -629,14 +629,14 @@ UM_AllChan_Internet_OOH_SpendGross,Independent,UM,AllChan,Internet,Internet_OOH,
 UM_AllChan_Internet_NewsPaper_SpendGross,Independent,UM,AllChan,Internet,Internet_NewsPaper,SpendGross,Spend
 UM_AllChan_Internet_Cinema_SpendGross,Independent,UM,AllChan,Internet,Internet_Cinema,SpendGross,Spend
 UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product_Discount_Weighted,Independent,UM,AllChan,2P,PaidSearch,Impressions,Search
-Comp_AllChan_Media_Spend,Independent,UM,AllChan,AllProd,Media,SpendGross,Comp
+Comp_AllChan_Media_Spend,Independent,UM,AllChan,AllProd,Media,Spend,Comp
 Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6,Independent,UM,AllChan,2P,Effectively_Mtl_Price,Avg_Ranking_V1,Comp
 UM_AllChan_AllProd_New_Year_Peak_2017,Independent,UM,AllChan,AllProd,OETimeShifting,Dummy,Seasonal
 UM_AllChan_AllProd_Christmas_Dip_2016,Independent,UM,AllChan,AllProd,OETimeShifting,Dummy,Seasonal
 UM_AllChan_AllProd_Peak_June_2015,Independent,UM,AllChan,AllProd,OETimeShifting,Dummy,Seasonal
 UM_Retailind_2P_HSIn_CPO3_Spend_GT_20000x,Independent,UM,Retailind,2P,CPO3,SpendGross,CPO
 UM_Retailind_2P_HSIn_CPO3_Spend_LTE_20000x,Independent,UM,Retailind,HSIn,CPO3,SpendGross,CPO
-Comp_AllChan_HSIn_Spend,Independent,UM,AllChan,HSIn,Media,SpendGross,Comp
+Comp_AllChan_HSIn_Spend,Independent,UM,AllChan,HSIn,Media,Spend,Comp
 UM_AllChan_3P_ListPrice_Dummy,Independent,UM,AllChan,3P,ListPrice,Dummy,Price
 UM_AllChan_HSIn_PaidSearch_Impressions_Nonbrand_Product,Independent,UM,AllChan,HSIn,PaidSearch,Impressions,Search
 UM_AllChan_3P_LosWochos_PriceReduction,Independent,UM,AllChan,3P,LosWochas,EuroDiscount,Promo
@@ -648,8 +648,6 @@ UM_AllChan_1P_PaidSearch_NonBrand_Product,Independent,UM,AllChan,1P,PaidSearch,I
 UM_AllChan_BCS_ListPrice_Dummy,Independent,UM,AllChan,BCS,ListPrice,Dummy,Price
 UM_AllChan_AllProd_PaidSearch_Impressions_NonBrand_Product,Independent,UM,AllChan,AllProd,PaidSearch,Impressions,Search
 UM_D2DTeleout_BCS_Residual_One_Sigma_Dummy,Independent,UM,D2DTeleout,BCS,BCS_Residual,Dummy,Technical
-"UM_AllChan_2P_VP4_Stepchange2
-",Independent,UM,AllChan,2P,Effectively_Mtl_Price,Avg_Ranking_V4,VP
 UM_AllChan_2P_TradePress_SpendGross2,Independent,UM,AllChan,2P,TradePress,SpendGross,Spend
 UM_AllChan_2P_Outbound_ReachedContacts2,Independent,UM,AllChan,2P,Outbound,ReachedContacts,DM
 UM_AllChan_2P_VP3_Stepchange2x,Independent,UM,AllChan,2P,Effectively_Mtl_Price,Avg_Ranking_V3,VP
