@@ -1,33 +1,11 @@
 
-# refresh model 8
-
-options(scipen= 999, digits=8)
-library(dlm)
-library(car)
-library(data.table)
-library(ggplot2)
-library(lattice)
-library(knitr)
-library(Boruta)
-library(Hmisc)
-
-# Read in data ------------------------------------------------------------
-
-ds.prep <- read.csv("./Data/Model_Database_20180404_Until KW201752_Changed SEM Values.csv")
-
-# Define target and independents ------------------------------------------
-# start with seasonals - pricing - competitive marketing - operational/structural events
-
-target <- ds.prep$UM_Digitalind_2P_Sales_Units_OE
-
 # use datadict to select right variable
 
-datadict <- read.csv("./Data/datadict.csv") # [,c('Variable_Name', 'Category')]
 seasonal <- datadict[which(datadict$Category=='Seasonal'),]
 # create a vector of seasonal variables
 vSeasonal <- seasonal[, "Variable_Name"]
 
-ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% vSeasonal])
+ds.prep.model <- cbind(target, ds.prep[,names(ds.prep) %in% vSeasonal])
 
 # what are the important seasonal variables (none in original model)
 
@@ -42,7 +20,7 @@ View(boruta.df)
 # only UM_AllChan_AllProd_School_Holidays_GeoWeightedDays and UM_AllChan_AllProd_School_Holidays_GeoWeightedDays_T
 # are significant and UM_AllChan_AllProd_School_Holidays_GeoWeightedDays_T is better so we put it in model
 
-nm<-c("UM_AllChan_AllProd_School_Holidays_GeoWeightedDays_T")
+nm <- c("UM_AllChan_AllProd_School_Holidays_GeoWeightedDays_T")
 
 # next price and discount variables
 
@@ -50,7 +28,7 @@ price <- datadict[which((datadict$Category=='Price' | datadict$Category=='VP') &
 # create a vector of seasonal variables
 vPrice <- price[, "Variable_Name"]
 
-ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% vPrice])
+ds.prep.model <- cbind(target, ds.prep[,names(ds.prep) %in% vPrice])
 
 # use Boruta function to determine significance of individual predictors
 set.seed(123)
@@ -76,10 +54,10 @@ View(flattenCorrMatrix(res2$r, res2$P))
 
 nm<-c(
   "UM_AllChan_AllProd_School_Holidays_GeoWeightedDays"
-#  , "UM_AllChan_2P_LosWochos_Stepchange_T"
+  #  , "UM_AllChan_2P_LosWochos_Stepchange_T"
   , "UM_AllChan_2P_ListPrice_Dummy"
-#  , "UM_AllChan_2P_VP3_Stepchange"
-#  , "UM_AllChan_2P_VP4_Stepchange"
+  #  , "UM_AllChan_2P_VP3_Stepchange"
+  #  , "UM_AllChan_2P_VP4_Stepchange"
   , "UM_AllChan_2P_EffectivePriceRed_Euros")
 
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm])
@@ -169,8 +147,8 @@ nm<-c(
   #  , "UM_AllChan_2P_VP3_Stepchange"
   #  , "UM_AllChan_2P_VP4_Stepchange"
   , "UM_AllChan_2P_EffectivePriceRed_Euros"
-#  , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V1"
- , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6"
+  #  , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V1"
+  , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6"
 )
 
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm])
@@ -206,10 +184,10 @@ nm<-c(
   , "UM_AllChan_2P_ListPrice_Dummy"
   , "UM_AllChan_2P_EffectivePriceRed_Euros"
   , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V1"
-#  , "UM_AllChan_3P_Radio_GRP"
+  #  , "UM_AllChan_3P_Radio_GRP"
   , "UM_AllChan_2P_Radio_GRP"
-#  , "UM_AllChan_2P_TV_GRP"
-
+  #  , "UM_AllChan_2P_TV_GRP"
+  
 )
 
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm])
@@ -223,7 +201,6 @@ nm<-c(
   , "UM_AllChan_2P_EffectivePriceRed_Euros"
   , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V1"
   , "UM_AllChan_2P_Radio_GRP"
-  
 )
 
 # Spend
@@ -254,6 +231,8 @@ nm<-c(
   , "UM_AllChan_2P_EffectivePriceRed_Euros"
   , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V1"
   , "UM_AllChan_2P_Radio_GRP"
-
+  
 )
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm])
+
+
