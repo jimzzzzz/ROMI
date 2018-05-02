@@ -3,10 +3,13 @@ DLMModel <- function(ds.prep.model,
                      scaling_factor = 100,
                      vLevel = NULL # used for prior model variance
                      ){
+  # a function for runnning the DLM model and exporting the results in
+  # a format for inputting in Excel
+  # INPUT is the dataframe used for the outputs
   
   complete.db <- ds.prep.model
   
-  dep.Var <- complete.db[,1]/scaling_factor
+  dep.Var <- complete.db[,1] / scaling_factor
   ind.Var <- complete.db[,2 : ncol(complete.db)]
   
   # This determines the number of unobserved components that we want to have in the model
@@ -16,7 +19,6 @@ DLMModel <- function(ds.prep.model,
   
   GetModel <- function(parm){
     # this is the same function as in the original codes but with ind.Var
-    
     
     # Build the model
     modReg <- dlmModReg(ind.Var,
@@ -63,7 +65,8 @@ DLMModel <- function(ds.prep.model,
   pVal <- pnorm(-abs(zVal))
   
   # the betas multiplied by the values of the independent vars
-  contributions <- sweep(ind.Var, 2, model_beta, "*") * scaling_factor
+  # contributions <- sweep(ind.Var, 2, model_beta, "*") * scaling_factor
+  contributions <- sweep(ind.Var, 2, model_beta, "*")
   
   # defining the input matrix for subsequent work
   INPUT <- cbind(pVal, model_beta, t(contributions))

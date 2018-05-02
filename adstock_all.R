@@ -32,3 +32,4 @@ for(i in Vvar2ad){
 
 # how do we extract the adstock parameters
 
+output_list$UM_AllChan_AllProd_Radio_GRP$adstock_params
