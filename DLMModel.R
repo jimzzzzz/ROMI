@@ -3,14 +3,12 @@ DLMModel <- function(ds.prep.model,
                      scaling_factor = 100,
                      vLevel = NULL # used for prior model variance
                      ){
-  # a function for runnning the DLM model and exporting the results in
-  # a format for inputting in Excel
-  # INPUT is the dataframe used for the outputs
+
   
   complete.db <- ds.prep.model
   
-  dep.Var <- complete.db[,1] / scaling_factor
-  ind.Var <- complete.db[,2 : ncol(complete.db)]
+  dep.Var <- complete.db[,1]/scaling_factor
+  ind.Var <- complete.db[,2:ncol(complete.db)]
   
   # This determines the number of unobserved components that we want to have in the model
   #  In absence of not so significant seasonality component, we can fix level variance to 
@@ -19,6 +17,7 @@ DLMModel <- function(ds.prep.model,
   
   GetModel <- function(parm){
     # this is the same function as in the original codes but with ind.Var
+    
     
     # Build the model
     modReg <- dlmModReg(ind.Var,
@@ -40,7 +39,7 @@ DLMModel <- function(ds.prep.model,
                      method = "CG")
   
   # This is checking if we want to fix level variance based on prior information
-  if(!is.null(vLevel)){
+  if (!is.null(vLevel)) {
     modelMle$par[2] <- vLevel
   }
   
@@ -60,26 +59,41 @@ DLMModel <- function(ds.prep.model,
   cov <- dlmSvd2var(kFilterSmooth$U.S, kFilterSmooth$D.S)[-1]
   width <- t(qnorm(.95) * sqrt(sapply(cov,diag)))[1,1:dim(ind.Var)[2]]
   
-  se <- scaling_factor* width/(1.96)
+  se <- scaling_factor * width/(1.96)
   zVal <- model_beta/se
   pVal <- pnorm(-abs(zVal))
   
   # the betas multiplied by the values of the independent vars
-  # contributions <- sweep(ind.Var, 2, model_beta, "*") * scaling_factor
-  contributions <- sweep(ind.Var, 2, model_beta, "*")
+  # contributions <- sweep(ind.Var, 2, model_beta, "*")
+  contributions <- sweep(ind.Var, 2, model_beta, "*") * scaling_factor
+  
+  
+  # defining fitted values 
+  Fit <- c(NA, NA, apply(as.data.frame(Model$INPUT)[3:dim(Model$INPUT)[2]],2,sum))
+  
+  # defining Actuals 
+  Actuals <- c(NA, NA ,ds.prep.model$target)
+  
+  # defining Residuals 
+  Residuals <- Actuals - Fit
+  
   
   # defining the input matrix for subsequent work
   INPUT <- cbind(pVal, model_beta, t(contributions))
-  INPUT <- rbind(t(c(0, 1, model_base)), INPUT)
-  rownames(INPUT)[1] <- "Moving_Base"
+  INPUT <- rbind(t(Actuals), t(Fit), t(Residuals), t(c(0, 1, model_base)), INPUT)
+  rownames(INPUT)[1:4] <- c("Actuals","Fit","Residuals","Moving_Base")
+  colnames(INPUT)[1:2] <- c("pVal", "model_beta")
   
   DLMModel <- list(
     INPUT = INPUT,
     model_base = model_base,
     model_beta = model_beta,
     pVal = pVal,
-    contributions = contributions
-  )
+    contributions = contributions,
+    fit = as.vector(Fit),
+    actuals = as.vector(Actuals),
+    residuals = as.vector(Residuals)
+    )
   
   class(DLMModel) <- "DLMModel"
   
