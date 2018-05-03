@@ -64,12 +64,20 @@ DLMModel <- function(ds.prep.model,
   pVal <- pnorm(-abs(zVal))
   
   # the betas multiplied by the values of the independent vars
-  # contributions <- sweep(ind.Var, 2, model_beta, "*")
-  contributions <- sweep(ind.Var, 2, model_beta, "*") * scaling_factor
+  # contributions <- sweep(ind.Var, 2, model_beta, "*") * scaling_factor
+  
+  #better without scaling factor
+  contributions <- sweep(ind.Var, 2, model_beta, "*")
+  
+  
+  # defining the input matrix for subsequent work
+  INPUT <- cbind(pVal, model_beta, t(contributions))
+  INPUT <- rbind(t(c(0, 1, model_base)), INPUT)
+  rownames(INPUT)[1] <- c("Moving_Base")
   
   
   # defining fitted values 
-  Fit <- c(NA, NA, apply(as.data.frame(Model$INPUT)[3:dim(Model$INPUT)[2]],2,sum))
+  Fit <- c(NA, NA, apply(as.data.frame(INPUT)[3:dim(INPUT)[2]],2,sum))
   
   # defining Actuals 
   Actuals <- c(NA, NA ,ds.prep.model$target)
@@ -77,11 +85,8 @@ DLMModel <- function(ds.prep.model,
   # defining Residuals 
   Residuals <- Actuals - Fit
   
-  
-  # defining the input matrix for subsequent work
-  INPUT <- cbind(pVal, model_beta, t(contributions))
-  INPUT <- rbind(t(Actuals), t(Fit), t(Residuals), t(c(0, 1, model_base)), INPUT)
-  rownames(INPUT)[1:4] <- c("Actuals","Fit","Residuals","Moving_Base")
+  INPUT <- rbind(t(Actuals), t(Fit), t(Residuals), INPUT)
+  rownames(INPUT)[1:3] <- c("Actuals","Fit","Residuals")
   colnames(INPUT)[1:2] <- c("pVal", "model_beta")
   
   DLMModel <- list(
