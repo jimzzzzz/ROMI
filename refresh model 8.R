@@ -12,7 +12,7 @@ library(Hmisc)
 
 # Read in data ------------------------------------------------------------
 
-ds.prep <- read.csv("./Data/Model_Database_20180404_Until KW201752_Changed SEM Values.csv")
+ds.prep <- read.csv("./Data/Model_Database_20180419_Until KW201752_SEM_Trad_Reworked.csv")
 
 # Define target and independents ------------------------------------------
 # start with seasonals - pricing - competitive marketing - operational/structural events
@@ -23,7 +23,7 @@ plot(target, type="l", col="blue", xlab="weeks", ylab="OEs", main="Sales Trend")
 lines(ds.prep$UM_Digitaldir_2P_Sales_Units_OE, type="l", col="red")
 # use datadict to select right variable
 
-datadict <- read.csv("./Data/datadict.csv") # [,c('Variable_Name', 'Category')]
+datadict <- read.csv("./Data/datadict.csv") 
 seasonal <- datadict[which(datadict$Category=='Seasonal'),]
 # create a vector of seasonal variables
 vSeasonal <- seasonal[, "Variable_Name"]
@@ -208,7 +208,7 @@ View(boruta.df)
 
 # trad media was in original model but is now inignificant with wrong sign 
 # UM_AllChan_TV_Internet_SpendGross, UM_AllChan_AllProd_Internet_SpendGross are significant but with wrong sign
-# UM_AllChan_HSIn_TV_SpendGross highly significant with positive sign
+# UM_AllChan_HSIn_TV_SpendGross not significant
 ns<-c(
   "UM_AllChan_Tel_Radio_GRP"
 #  , "UM_HSIn_AllProd_TraditionalMedia_SpendGross"
@@ -217,7 +217,11 @@ ns<-c(
 #  , "UM_AllChan_AllProd_Newspapers_SpendGross_T"
 #  , "UM_AllChan_AllProd_Internet_SpendGross"
 #  , "UM_AllChan_AllProd_Newspapers_SpendGross"
-  , "UM_AllChan_HSIn_TV_SpendGross"
+#  , "UM_AllChan_AllProd_Radio_SpendGross"
+#  , "UM_AllChan_HSIn_TV_SpendGross"
+  , "UM_AllChan_2P_OOH_SpendGross_T"
+#  , "UM_AllChan_2P_TradePress_SpendGross2"
+#  , "UM_AllChan_AllProd_InternetSocialIO_SpendGross"
 )
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm], var_adstocked[,names(var_adstocked) %in% ns])
 
@@ -229,7 +233,7 @@ View(pVal)
 # so now we have adstocked
 ns<-c(
   "UM_AllChan_Tel_Radio_GRP"
-  , "UM_AllChan_HSIn_TV_SpendGross"
+  , "UM_AllChan_2P_OOH_SpendGross_T"
 )
 
 # comp spend
@@ -364,11 +368,10 @@ nm<-c( #not adstocked
 )
 ns<-c(
   "UM_AllChan_Tel_Radio_GRP"
-  , "UM_AllChan_HSIn_TV_SpendGross"
+  , "UM_AllChan_2P_OOH_SpendGross_T"
   , "Comp_AllChan_Media_Spend"
   , "UM_AllChan_2p_Email_Number"
   , "UM_AllChan_2P_SocialFBInsta_Impressions_T"
-#  , "Comp_AllChan_TV_PromoEvents_Spend"
 )
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm], var_adstocked[,names(var_adstocked) %in% ns])
 
@@ -379,5 +382,13 @@ View(model_beta)
 View(pVal)
 
 # next time take this model and produce the output diagnostics
-write.csv(ds.prep.model, file = "output.csv")
+coeff     <- kFilterSmooth$s[2 : 2, 1 : (ncol(kFilterSmooth$s) - 1)]
+intercept <- kFilterSmooth$s[2 : nrow(kFilterSmooth$s), (ncol(kFilterSmooth$s)) ] 
+A <- sweep(ind.Var, MARGIN = 2, coeff, "*") * scaling_factor
+intercept <- intercept * scaling_factor
+y     <- dep.Var * scaling_factor
+y_hat <- rowSums(A) + intercept
+Overview <- as.data.table(cbind(coeff * scaling_factor, base = intercept, y_hat, y, resi = (y - y_hat)))
 
+R2 <- 1 - (sum((Overview$y-Overview$y_hat )^2)/sum((Overview$y-mean(Overview$y))^2))
+R2

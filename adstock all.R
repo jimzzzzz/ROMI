@@ -2,7 +2,6 @@
 # GRP, Spend, Promo, DM, Comp spend, digital, search
 # not price, VP, scarcity, CPOs
 
-datadict <- read.csv("./Data/datadict.csv")
 var2ad <- datadict[which (  datadict$Category=='GRP'
                           | datadict$Category=='Spend'
                           | datadict$Category=='Promo'

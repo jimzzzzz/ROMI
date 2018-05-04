@@ -42,3 +42,5 @@ se <- scaling_factor* width/(1.96)
 zVal <- model_beta/se
 pVal <- pnorm(-abs(zVal))
 pVal <- c(0.0, pVal)
+View(model_beta)
+View(pVal)
