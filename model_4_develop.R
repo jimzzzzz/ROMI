@@ -1,4 +1,15 @@
-# Model 4 development code
+# Model 4 - Inbound and SIS 2P
+
+# Define target ------------------------------------------
+
+target <- ds.prep$UM_TeleinSiS_2P_Sales_Units_OE
+
+# Run adstocks ------------------------------------------------------------
+
+source("adstock all.R")
+
+# Use model_variable_selection.R to select variables to enter here
+
 # nm is list of non-adstocked
 # ns is list of adstocked
 

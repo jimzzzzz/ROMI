@@ -49,3 +49,6 @@ ds.prep$UM_AllChan_HSIn_All_SpendGross_2 <- (
     ds.prep$UM_AllChan_HSIn_TradePress_SpendGross_2+
     ds.prep$UM_AllChan_HSIn_TV_SpendGross_2
 )
+
+ds.prep$UM_AllChan_2P_PaidSearch_Impressions_Product_Discount_Weighted <- ds.prep$UM_AllChan_2P_PaidSearch_Impressions_Product * ds.prep$UM_AllChan_2P_EffectivePriceRed_Euros
+

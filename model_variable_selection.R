@@ -87,6 +87,13 @@ Vsel <- as.character(sel[, "Variable_Name"])
 ds.prep.model <- cbind(target, var_adstocked[,names(var_adstocked) %in% Vsel])
 source("boruta.R")
 
+# Competition GRPs
+
+sel <- datadict[which(datadict$Category=='Comp' & datadict$Metric=='GRP'),]
+Vsel <- as.character(sel[, "Variable_Name"])
+ds.prep.model <- cbind(target, var_adstocked[,names(var_adstocked) %in% Vsel])
+source("boruta.R")
+
 # Promo
 
 sel <- datadict[which(datadict$Category=='Promo'),]
