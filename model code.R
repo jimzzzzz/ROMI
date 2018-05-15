@@ -71,6 +71,21 @@ Fit <- c(NA, NA, apply(as.data.frame(INPUT)[3:dim(INPUT)[2]],2,sum)+model_base)
 Actuals <- c(NA, NA ,ds.prep.model$target)
 Residuals <- Actuals - Fit
 
+# Durbin Watson Test
+DWstat <- sum((Residuals - lag(Residuals)) ^ 2, na.rm = TRUE) / sum(Residuals ^ 2, na.rm = TRUE)
+
+# Residuals plot
+png(filename="./residuals_plot.png")
+plot(Residuals)
+dev.off()
+
+MAPE <- mean(abs(Residuals / Actuals), na.rm = TRUE)
+
+formulaVIF <- create.formula(colnames(complete.db)[1], colnames(complete.db)[2:ncol(complete.db)])
+vif <- vif(lm(formulaVIF, data = complete.db))
+vifDf <- data.frame(VIF = vif)
+rownames(vifDf) <- names(vif)
+
 INPUT <- rbind(t(Residuals), t(Fit), t(Actuals), t(c(0, 1, model_base)), INPUT)
 rownames(INPUT)[1:4] <- c("Residuals","Fit","Actuals","Moving_Base")
 colnames(INPUT)[1:2] <- c("pVal", "model_beta")

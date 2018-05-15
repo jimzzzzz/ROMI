@@ -103,3 +103,15 @@ best_adstock <- function(var, dep_var, B){
               adstock_params = adstock_name_max)
   )
 }
+
+create.formula <- function (y.name, x.vector){
+  facts <- x.vector[1]
+  if(length(x.vector) != 1){
+    for (i in 2:length(x.vector)) {
+      facts <- paste0(facts, " + ", x.vector[i])
+    }
+  }
+  
+  temp.formula <- formula(paste0(y.name, " ~ ", facts))
+  return(temp.formula)
+}
