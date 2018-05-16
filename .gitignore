@@ -15,6 +15,7 @@
 *.zip
 *.pdf
 *.rar
+*.RDataTmp*
 backup/
 Data/
 Output/
