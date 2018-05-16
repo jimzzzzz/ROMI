@@ -39,10 +39,10 @@ nm <- c(
   "UM_AllChan_2P_ListPrice_Dummy"
 #  , "UM_AllChan_2P_EffectivePriceRed_Euros"
   , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6"
-#  , "UM_DigitalIndir_AllProd_AvgCashBackPaid_Euros_2016n17" 
+  , "UM_DigitalIndir_AllProd_AvgCashBackPaid_Euros_2016n17" 
   , "UM_AllChan_AllProd_School_Holidays_GeoWeightedDays" 
   , "UM_AllChan_2P_ScarcityIndicator_StepChange" 
-#  , "UM_AllChan_2P_LosWochos_Stepchange"
+  , "UM_AllChan_2P_LosWochos_Stepchange"
 )
 
 ns<-c(
@@ -78,7 +78,6 @@ ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm], var_adstocked[,na
 a <- ds.prep.model$Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6
 min_a <- min(a)
 ds.prep.model$Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6 <- a - min_a
-
 
 # Run all chosen variables through model
 scaling_factor <- 100

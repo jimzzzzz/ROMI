@@ -15,24 +15,6 @@ adstock_it <- function(vector, learn, decay, scalar){
   return(output)
 }
 
-GetModel <- function(parm){
-  
-  # Build the model
-  modReg <- dlmModReg(ind.Var,
-                      addInt = FALSE,
-                      dV = 0,
-                      dW = rep(0,  times = dim(ind.Var)[2]))
-  modTrend <- dlmModPoly(fitOrder)
-  dataModel <- modReg + modTrend
-  diag(dataModel$V) <- c(exp(parm[1]))
-  diag(dataModel$W) <- c(rep(0,
-                             times = dim(ind.Var)[2]),
-                         exp(parm[2:(fitOrder + 1)]))
-  return(dataModel)
-}
-
-
-
 best_adstock <- function(var, dep_var, B){
   # a function that loops through a grid with possible adstock parameters 
   # and chooses the best ones based on their correlation with a given variable - dep_var
@@ -47,7 +29,7 @@ best_adstock <- function(var, dep_var, B){
   #   a list with the following elements:
   #   adstocked_vector_max - the transformed vector with best parameters
   #   results - a dataframe containing info about the correlations for the different parameters
-  #   adstock_params - the parameters that maximise the correlation with dep_var
+  #   adstock_params - a vector with the parameters that maximise the correlation with dep_var - learn, decay, scalar
   # 
   
   # handler for variables with zero variance
@@ -98,8 +80,13 @@ best_adstock <- function(var, dep_var, B){
     }
   }
   
+  adstock_params <- strsplit(adstock_name_max, "_")
+  adstock_params <- as.numeric(unlist(adstock_params))
+  names(adstock_params) <- c("learn", "decay", "scalar")
+  adstock_params <- as.list(adstock_params)
+  
   return(list(adstocked_vector_max = adstocked_vector_max, 
               results = results,
-              adstock_params = adstock_name_max)
+              adstock_params = adstock_params)
   )
 }
