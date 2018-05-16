@@ -1,5 +1,5 @@
 # Model 7 - Digital direct 2P
-
+model <- "Model_7"
 # Define target ------------------------------------------
 
 target <- ds.prep$UM_Digitaldir_2P_Sales_Units_OE
@@ -56,10 +56,10 @@ ns <- c(
 
 
 # Use the following line if no adstocked variable included yet
-ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm])
+ds.prep.model <- cbind(target, ds.prep[,names(ds.prep) %in% nm])
 
 # Use following line if non-adstocked and adstocked variables being used
-ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm], var_adstocked[,names(var_adstocked) %in% ns])
+ds.prep.model <- cbind(target, ds.prep[,names(ds.prep) %in% nm], var_adstocked[,names(var_adstocked) %in% ns])
 
 # adjust Comp variable so that it goes through zero - subtract min value from every value
 # this does not effect the betas produced but will reduce the contribution from this variable

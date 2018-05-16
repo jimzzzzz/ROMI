@@ -15,6 +15,7 @@
 *.zip
 *.pdf
 *.rar
+*.png
 backup/
 Data/
 Output/

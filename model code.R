@@ -67,7 +67,7 @@ contributions <- sweep(ind.Var, 2, model_beta, "*")
 INPUT <- cbind(pVal, model_beta, t(contributions))
 
 # Defining fitted values, actual and residuals
-Fit <- c(NA, NA, apply(as.data.frame(INPUT)[3:dim(INPUT)[2]],2,sum)+model_base)
+Fit <- c(NA, NA, apply(as.data.frame(INPUT)[3:dim(INPUT)[2]],2,sum) + model_base)
 Actuals <- c(NA, NA ,ds.prep.model$target)
 Residuals <- Actuals - Fit
 
@@ -75,7 +75,7 @@ Residuals <- Actuals - Fit
 DWstat <- sum((Residuals - lag(Residuals)) ^ 2, na.rm = TRUE) / sum(Residuals ^ 2, na.rm = TRUE)
 
 # Residuals plot
-png(filename="./residuals_plot.png")
+png(filename = "./residuals_plot.png")
 plot(Residuals)
 dev.off()
 
@@ -89,3 +89,14 @@ rownames(vifDf) <- names(vif)
 INPUT <- rbind(t(Residuals), t(Fit), t(Actuals), t(c(0, 1, model_base)), INPUT)
 rownames(INPUT)[1:4] <- c("Residuals","Fit","Actuals","Moving_Base")
 colnames(INPUT)[1:2] <- c("pVal", "model_beta")
+
+R_sqr <- 1 - sum((INPUT[1,])^2, na.rm = T)/sum((INPUT[3,] - mean(INPUT[3,],na.rm = T))^2, na.rm = T)
+
+
+write.csv(data.frame(MAPE,DWstat,R_sqr),paste0(model,"_metrics.csv"))
+write.csv(vif,paste(model,"_vif_metrics.csv"))
+
+
+
+
+

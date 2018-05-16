@@ -1,5 +1,5 @@
 # Model 8 - Digital indirect 2P
-
+model <- "Model_8"
 # Define target ------------------------------------------
 
 target <- ds.prep$UM_Digitalind_2P_Sales_Units_OE
@@ -21,7 +21,7 @@ nm <- c( # all these variables ok for beta and p-value
   , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6"
 )
 
-ns<-c(
+ns <- c(
 #  "UM_HSIn_AllProd_TraditionalMedia_SpendGross" # pval not great
   "UM_AllChan_HSIn_All_SpendGross_2"
   , "UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product_T" # bad pval
@@ -45,7 +45,7 @@ nm <- c(
 #  , "UM_AllChan_2P_LosWochos_Stepchange"
 )
 
-ns<-c(
+ns <- c(
   "UM_AllChan_2P_SocialFBInsta_Impressions_T"
   , "Comp_AllChan_Media_Spend"
 #  , "UM_AllChan_2P_Radio_GRP" # makes HSIn spend worse
@@ -67,10 +67,10 @@ ns<-c(
 
 
 # Use the following line if no adstocked variable included yet
-ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm])
+ds.prep.model <- cbind(target, ds.prep[,names(ds.prep) %in% nm])
 
 # Use following line if non-adstocked and adstocked variables being used
-ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% nm], var_adstocked[,names(var_adstocked) %in% ns])
+ds.prep.model <- cbind(target, ds.prep[,names(ds.prep) %in% nm], var_adstocked[,names(var_adstocked) %in% ns])
 
 # adjust Comp variable so that it goes through zero - subtract min value from every value
 # this does not effect the betas produced but will reduce the contribution from this variable
