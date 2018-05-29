@@ -1,9 +1,8 @@
 DLMModel <- function(ds.prep.model, 
                      scaling_factor = 100,
                      vLevel = NULL # used for prior model variance
-                    ){
-  
-  
+                     ){
+
   complete.db <- ds.prep.model
   
   dep.Var <- complete.db[,1]/scaling_factor
@@ -66,22 +65,21 @@ DLMModel <- function(ds.prep.model,
   # contributions <- sweep(ind.Var, 2, model_beta, "*") * scaling_factor
   
   #better without scaling factor
-  
-  # defining fitted values 
-  Fit <- c(NA, NA, apply(as.data.frame(INPUT)[3:dim(INPUT)[2]],2,sum)+model_base)
-  
-  # defining Actuals 
-  Actuals <- c(NA, NA ,ds.prep.model$target)
-  
-  # defining Residuals 
-  Residuals <- Actuals - Fit
-  
-  
+
+  contributions <- sweep(ind.Var, 2, model_beta, "*")
+
   # defining the input matrix for subsequent work
   INPUT <- cbind(pVal, model_beta, t(contributions))
+  
+  # Defining fitted values, actual and residuals
+  Fit <- c(NA, NA, apply(as.data.frame(INPUT)[3:dim(INPUT)[2]],2,sum)+model_base)
+  Actuals <- c(NA, NA ,ds.prep.model$target)
+  Residuals <- Actuals - Fit
+  
   INPUT <- rbind(t(Residuals), t(Fit), t(Actuals), t(c(0, 1, model_base)), INPUT)
   rownames(INPUT)[1:4] <- c("Residuals","Fit","Actuals","Moving_Base")
   colnames(INPUT)[1:2] <- c("pVal", "model_beta")
+
   
   DLMModel <- list(
     INPUT = INPUT,
@@ -92,9 +90,11 @@ DLMModel <- function(ds.prep.model,
     fit = as.vector(Fit),
     actuals = as.vector(Actuals),
     residuals = as.vector(Residuals)
+
   )
-  
+
   class(DLMModel) <- "DLMModel"
   
   return(DLMModel)
+
 }

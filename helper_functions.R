@@ -4,11 +4,11 @@ adstock_it <- function(vector, learn, decay, scalar){
   output <- rep(0,n)
   vector <- (vector / max(vector)) * scalar 
   
-  for(i in 1 : length(output)){
+  for (i in 1:length(output)) {
     
     Decay <- -decay
     HRF   <- learn
-    if(i == 1) {zaehler <- 1} else {zaehler <- 1 - output[i-1] * exp(Decay)}
+    if (i == 1) {zaehler <- 1} else {zaehler <- 1 - output[i - 1] * exp(Decay)}
     nenner  <- exp(vector[i] / 100 * HRF )                                      # Teile durch 100 da es als Prozente angegeben werden soll! 
     output[i] <- 1 - (zaehler/nenner)
   }
@@ -33,7 +33,7 @@ best_adstock <- function(var, dep_var, B){
   # 
   
   # handler for variables with zero variance
-  if(var(var) == 0){
+  if (var(var) == 0) {
     return(list(adstocked_vector_max = var, 
                 results = "no variance for this variable",
                 adstock_params = "no variance for this variable")
@@ -50,13 +50,13 @@ best_adstock <- function(var, dep_var, B){
   adstocked_vector_final <- var
   max_score <- -1
   
-  for(i in 1 :nrow(B)){
+  for (i in 1:nrow(B)) {
     # print(i)
     vector <- var
     learn  <- B$learn[i]
     decay  <- B$decay[i]
     scalar <- B$scalar[i]
-    adstock_name <- paste(learn, decay, scalar, sep="_")
+    adstock_name <- paste(learn, decay, scalar, sep = "_")
     adstocked_vector <- adstock_it(vector, learn, decay, scalar)
     
     res <- cor.test(dep_var, adstocked_vector, method = "pearson") 
@@ -71,8 +71,8 @@ best_adstock <- function(var, dep_var, B){
     results <- rbind(results, output)
     
     # choosing the adstock with the best score
-    if(!is.na(res$statistic)){
-      if(abs(res$statistic) >= max_score){
+    if (!is.na(res$statistic)) {
+      if (abs(res$statistic) >= max_score) {
         max_score <- abs(res$statistic)
         adstocked_vector_max <- adstocked_vector
         adstock_name_max <- adstock_name
@@ -90,3 +90,17 @@ best_adstock <- function(var, dep_var, B){
               adstock_params = adstock_params)
   )
 }
+
+
+create.formula <- function(y.name, x.vector){
+  facts <- x.vector[1]
+  if (length(x.vector) != 1) {
+    for (i in 2:length(x.vector)) {
+      facts <- paste0(facts, " + ", x.vector[i])
+    }
+  }
+  
+  temp.formula <- formula(paste0(y.name, " ~ ", facts))
+  return(temp.formula)
+}
+

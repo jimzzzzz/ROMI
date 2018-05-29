@@ -88,7 +88,45 @@ source("model code.R")
 
 View(model_beta)
 View(pVal)
-
-source("contributions.R")
-
 View(INPUT)
+
+# check adstocks used
+
+output_list$UM_AllChan_2P_SocialFBInsta_Impressions_T$adstock_params
+output_list$Comp_AllChan_Media_Spend$adstock_params
+output_list$UM_AllChan_Total_All_SpendGross_2L2$adstock_params
+output_list$UM_AllChan_2p_Email_Number$adstock_params
+output_list$UM_AllChan_2p3p_WhitemailXWOWI_Number$adstock_params
+output_list$UM_AllChan_2P_PaidSearch_Impressions_Product_Discount_Weighted$adstock_params
+
+# output the raw support
+
+rs <- c(
+  "UM_AllChan_2P_ListPrice_Dummy"
+  , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6"
+  , "UM_DigitalIndir_AllProd_AvgCashBackPaid_Euros_2016n17" 
+  , "UM_AllChan_AllProd_School_Holidays_GeoWeightedDays" 
+  , "UM_AllChan_2P_ScarcityIndicator_StepChange" 
+  , "UM_AllChan_2P_LosWochos_Stepchange"
+  , "UM_AllChan_2P_SocialFBInsta_Impressions_T"
+  , "Comp_AllChan_Media_Spend"
+  , "UM_AllChan_2p_Email_Number"
+  , "UM_AllChan_2p3p_WhitemailXWOWI_Number"
+  , "UM_AllChan_2P_PaidSearch_Impressions_Product_Discount_Weighted"
+  , "UM_AllChan_Total_All_SpendGross_2L2"
+  , "UM_AllChan_HSIn_Magazines_SpendGross_2L2"
+  , "UM_AllChan_HSIn_Newspapers_SpendGross_2L2"
+  , "UM_AllChan_HSIn_OOH_SpendGross_2L2"
+  , "UM_AllChan_HSIn_Radio_SpendGross_2L2"
+  , "UM_AllChan_HSIn_TradePress_SpendGross_2L2"
+  , "UM_AllChan_HSIn_TV_SpendGross_2L2"
+  , "UM_AllChan_Brand_Magazines_SpendGross_2L2"
+  , "UM_AllChan_Brand_Newspapers_SpendGross_2L2"
+  , "UM_AllChan_Brand_OOH_SpendGross_2L2"
+  , "UM_AllChan_Brand_Radio_SpendGross_2L2"
+  , "UM_AllChan_Brand_TradePress_SpendGross_2L2"
+  , "UM_AllChan_Brand_TV_SpendGross_2L2"
+)
+
+write.csv(t(ds.prep[,names(ds.prep) %in% rs]), file = "model_8_raw_support.csv")
+

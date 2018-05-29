@@ -80,3 +80,43 @@ source("model code.R")
 View(model_beta)
 View(pVal)
 View(INPUT)
+
+# check adstocks used
+
+output_list$Comp_AllChan_Media_Spend$adstock_params
+output_list$UM_AllChan_AllProd_NonProgDisplay_Impressions_T$adstock_params
+output_list$UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product_Discount_Weighted$adstock_params
+output_list$UM_AllChan_HSIn_All_SpendGross_2L2$adstock_params
+output_list$UM_AllChan_Brand_All_SpendGross_2L2$adstock_params
+output_list$UM_AllChan_All_ProgFB_Impressions$adstock_params
+
+# output the raw support
+
+rs <- c(
+  "UM_AllChan_2P_ListPrice_Dummy"
+  , "UM_AllChan_MSI_Discount15End_Dummy"
+  , "UM_AllChan_MSI_PostDiscount15_Dummy"
+  , "Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V6"
+  , "UM_AllChan_2P_ScarcityIndicator_StepChange"
+  , "UM_AllChan_2P_LosWochos_Stepchange_T"
+  , "Comp_AllChan_Media_Spend"
+  , "UM_AllChan_AllProd_NonProgDisplay_Impressions_T"
+  , "UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product_Discount_Weighted"
+  , "UM_AllChan_HSIn_All_SpendGross_2L2"
+  , "UM_AllChan_Brand_All_SpendGross_2L2"
+  , "UM_AllChan_All_ProgFB_Impressions"
+  , "UM_AllChan_HSIn_Magazines_SpendGross_2L2"
+  , "UM_AllChan_HSIn_Newspapers_SpendGross_2L2"
+  , "UM_AllChan_HSIn_OOH_SpendGross_2L2"
+  , "UM_AllChan_HSIn_Radio_SpendGross_2L2"
+  , "UM_AllChan_HSIn_TradePress_SpendGross_2L2"
+  , "UM_AllChan_HSIn_TV_SpendGross_2L2"
+  , "UM_AllChan_Brand_Magazines_SpendGross_2L2"
+  , "UM_AllChan_Brand_Newspapers_SpendGross_2L2"
+  , "UM_AllChan_Brand_OOH_SpendGross_2L2"
+  , "UM_AllChan_Brand_Radio_SpendGross_2L2"
+  , "UM_AllChan_Brand_TradePress_SpendGross_2L2"
+  , "UM_AllChan_Brand_TV_SpendGross_2L2"
+)
+
+write.csv(t(ds.prep[,names(ds.prep) %in% rs]), file = "model_7_raw_support.csv")

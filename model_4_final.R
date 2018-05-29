@@ -57,11 +57,11 @@ ns<-c(
 #  "UM_AllChan_2p3p_Whitemail_Number"
 #  "UM_AllChan_2p_Outbound_ReachedContacts"
 #   "UM_AllChan_2p_Email_Number"
-  "UM_AllChan_Brand_All_SpendGross_2"
+  "UM_AllChan_Brand_All_SpendGross_2L2"
   , "UM_AllChan_HSIn_All_SpendGross_2" # negative sign, also with lag
 #  "UM_AllChan_2P_Radio_GRP" # wrong sign
 #  , "Comp_AllChan_Media_Spend" # wrong sign
-   , "UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product" # sign wrong
+   , "UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product" 
 #  , "UM_AllChan_AllProd_ProgrammaticTot_Impressions" # sign wrong
   , "UM_AllChan_AllProd_NonProgTotal_Impressions" # sign wrong
 #  , "Comp_AllChan_HSIn_Spend" # sign wrong
@@ -70,7 +70,6 @@ ns<-c(
 #  , "UM_AllChan_All_ProgFB_Impressions" # wrong sign
 #  , "UM_AllChan_TV_SocialFBInsta_Impressions" # wrong sign
 )
-
 
 
 # Use the following line if no adstocked variable included yet
@@ -92,3 +91,38 @@ source("model code.R")
 View(model_beta)
 View(pVal)
 View(INPUT)
+
+# check adstocks used
+
+output_list$UM_AllChan_Brand_All_SpendGross_2L2$adstock_params
+output_list$UM_AllChan_HSIn_All_SpendGross_2$adstock_params
+output_list$UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product$adstock_params
+output_list$UM_AllChan_AllProd_NonProgTotal_Impressions$adstock_params
+
+# output the raw support
+
+rs <- c(
+  "UM_AllChan_2P_ListPrice_Dummy" 
+  , "UM_AllChan_2P_EffectivePriceRed_Euros"
+  , "UM_AllChan_2p_Whitemail_Number" 
+  , "UM_AllChan_2P_LosWochos_Stepchange" 
+  , "UM_AllChan_2P_VP4_Stepchange"
+  , "UM_AllChan_Brand_All_SpendGross_2L2"
+  , "UM_AllChan_HSIn_All_SpendGross_2"
+  , "UM_AllChan_2P_PaidSearch_Impressions_NonBrand_Product" 
+  , "UM_AllChan_AllProd_NonProgTotal_Impressions"
+  , "UM_AllChan_Brand_Magazines_SpendGross_2L2"
+  , "UM_AllChan_Brand_Newspapers_SpendGross_2L2"
+  , "UM_AllChan_Brand_OOH_SpendGross_2L2"
+  , "UM_AllChan_Brand_Radio_SpendGross_2L2"
+  , "UM_AllChan_Brand_TradePress_SpendGross_2L2"
+  , "UM_AllChan_Brand_TV_SpendGross_2L2"
+  , "UM_AllChan_HSIn_Magazines_SpendGross_2"
+  , "UM_AllChan_HSIn_Newspapers_SpendGross_2"
+  , "UM_AllChan_HSIn_OOH_SpendGross_2"
+  , "UM_AllChan_HSIn_Radio_SpendGross_2"
+  , "UM_AllChan_HSIn_TradePress_SpendGross_2"
+  , "UM_AllChan_HSIn_TV_SpendGross_2"
+)
+
+write.csv(t(ds.prep[,names(ds.prep) %in% rs]), file = "model_4_raw_support.csv")

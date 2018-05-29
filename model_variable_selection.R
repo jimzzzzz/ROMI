@@ -26,7 +26,7 @@ source("boruta.R")
 # Price and discount ------------------------------------------------------
 
 ### Change Product filter depending on '2P' or '3P' model
-sel <- datadict[which((datadict$Category=='Price' | datadict$Category=='VP') & (datadict$Product=='2P' | datadict$Product== 'AllProd')),]
+sel <- datadict[which((datadict$Category=='Price' | datadict$Category=='VP') & (datadict$Product=='3P' | datadict$Product== 'AllProd')),]
 Vsel <- sel[, "Variable_Name"]
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% Vsel])
 source("boruta.R")
@@ -42,15 +42,15 @@ source("boruta.R")
 # Competition price
 
 ### Change Product filter depending on '2P' or '3P' model
-sel <- datadict[which(datadict$Category=='Comp' & datadict$Activity =='Effectively_Mtl_Price' & datadict$Product=='2P'),]
+sel <- datadict[which(datadict$Category=='Comp' & datadict$Activity =='Effectively_Mtl_Price' & datadict$Product=='3P'),]
 Vsel <- sel[, "Variable_Name"]
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% Vsel])
 source("boruta.R")
 
 # Commissions
 
-### for Sales.Channel choose 'RetailIndir', 'Retaildir' or 'D2DTeleout' depending on model
-sel <- datadict[which(datadict$Category=='CPO' & datadict$Sales.Channel=='Retailind'),]
+### for Sales.Channel choose 'Retailind', 'Retaildir' or 'D2DTeleout' depending on model
+sel <- datadict[which(datadict$Category=='CPO' & datadict$Sales.Channel=='D2DTeleout'),]
 Vsel <- sel[, "Variable_Name"]
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% Vsel])
 source("boruta.R")
@@ -58,9 +58,16 @@ source("boruta.R")
 # Sales channel support
 
 ### Choose appropriate Sales Channel 'DigitalIndir', RetailIndir', 'Retaildir' or 'D2DTeleout' depending on model
-sel <- datadict[which(datadict$Category=='Support' & datadict$Sales.Channel=='RetailIndir'),]
+sel <- datadict[which(datadict$Category=='Support' & datadict$Sales.Channel=='D2DTeleout'),]
 Vsel <- sel[, "Variable_Name"]
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% Vsel])
+source("boruta.R")
+
+# DM nonadstocked
+
+sel <- datadict[which(datadict$Category=='DM'),]
+Vsel <- as.character(sel[, "Variable_Name"])
+ds.prep.model <- cbind(target, ds.prep[,names(ds.prep) %in% Vsel])
 source("boruta.R")
 
 # Adstock variable selection ----------------------------------------------
