@@ -62,6 +62,11 @@ ds.prep.model$Comp_AllChan_2P_Effectively_Mtl_Price_Avg_Ranking_V3 <- a - min_a
 a <- ds.prep.model$Comp_AllChan_HSIn_TV_GRP
 min_a <- min(a)
 ds.prep.model$Comp_AllChan_HSIn_TV_GRP <- a - min_a
+# does it make sense to remove min of this CPO variable - waiting for response of Nitesh
+a <- ds.prep.model$UM_Retaildir_2P_HSIn_CPO1b_2_SpendPerOE_M
+min_a <- min(a)
+ds.prep.model$UM_Retaildir_2P_HSIn_CPO1b_2_SpendPerOE_M <- a - min_a
+
 
 
 # Run all chosen variables through model

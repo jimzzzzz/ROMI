@@ -7,6 +7,7 @@ var2ad <- datadict[which (  datadict$Category=='GRP'
                           | datadict$Category=='Promo'
                           | datadict$Category=='DM'
                           |(datadict$Category=='Comp' & datadict$Metric=='Spend')
+                          |(datadict$Category=='Comp' & datadict$Metric=='GRP')
                           | datadict$Category=='Digital'
                           | datadict$Category=='Search'),]
 Vvar2ad <- as.character(var2ad[, "Variable_Name"])
@@ -31,3 +32,4 @@ for(i in Vvar2ad){
 
 # how do we extract the adstock parameters
 
+output_list$UM_AllChan_HSIn_All_SpendGross_2L2$adstock_params
