@@ -15,7 +15,11 @@
 *.zip
 *.pdf
 *.rar
+<<<<<<< HEAD
 *.RDataTmp*
+=======
+*.png
+>>>>>>> d53582d17df5d66b173d4f45675871e8576e9fe9
 backup/
 Data/
 Output/

@@ -10,6 +10,8 @@ target <- ds.prep$UM_TeleinSiS_3P_Sales_Units_OE
 
 source("adstock_all.R")
 
+write.csv(var_adstocked, file="var_adstocked.csv")
+
 # These variables were in the original model
 
 nm <- c(

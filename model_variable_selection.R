@@ -26,7 +26,7 @@ source("boruta.R")
 # Price and discount ------------------------------------------------------
 
 ### Change Product filter depending on '2P' or '3P' model
-sel <- datadict[which((datadict$Category=='Price' | datadict$Category=='VP') & (datadict$Product=='3P' | datadict$Product== 'AllProd')),]
+sel <- datadict[which((datadict$Category=='Price' | datadict$Category=='VP') & (datadict$Product=='2P' | datadict$Product== 'AllProd')),]
 Vsel <- sel[, "Variable_Name"]
 ds.prep.model<-cbind(target, ds.prep[,names(ds.prep) %in% Vsel])
 source("boruta.R")
